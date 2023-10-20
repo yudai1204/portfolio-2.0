@@ -46,3 +46,5 @@ export const skills = {
     "Adobe After Effects",
   ],
 };
+
+export { works } from "./works";

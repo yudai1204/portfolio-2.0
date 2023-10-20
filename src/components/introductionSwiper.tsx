@@ -1,4 +1,4 @@
-import { Box, Image, Flex, Icon } from "@chakra-ui/react";
+import { Box, Image, Flex, Icon, Text } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import { useMemo } from "react";
 import { SlArrowDown } from "react-icons/sl";
@@ -71,14 +71,23 @@ export const IntroductionSwiper = () => {
           ))}
         </Swiper>
       </Box>
-      <Flex position="absolute" bottom="50px" left="0" w="100%" justify="center" align="center" zIndex={1}>
-        <Icon
-          as={SlArrowDown}
-          fontSize="2rem"
-          color="white"
-          filter="drop-shadow(0 0 5px #0008)"
-          animation={`${scroll} 3s ease-in-out infinite`}
-        />
+      <Flex
+        position="absolute"
+        bottom="50px"
+        left="0"
+        w="100%"
+        justify="center"
+        align="center"
+        zIndex={1}
+        direction="column"
+        animation={`${scroll} 3s ease-in-out infinite`}
+        filter="drop-shadow(0 0 5px #0008)"
+        gap={2}
+      >
+        <Text fontSize={{ base: "xl", sm: "2xl" }} color="white" fontWeight="300" letterSpacing={2.5}>
+          SCROLL
+        </Text>
+        <Icon as={SlArrowDown} fontSize="2rem" color="white" />
       </Flex>
     </Box>
   );
