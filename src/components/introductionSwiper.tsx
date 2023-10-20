@@ -1,31 +1,85 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Image, Flex, Icon } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
+import { useMemo } from "react";
+import { SlArrowDown } from "react-icons/sl";
+import { Pagination, Navigation, Autoplay } from "swiper/modules"; //使いたい機能をインポート
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IntroductionCard } from "./introductionCard";
+import { useSvhSupport } from "@/utils/useSvhSupport";
 
 import "swiper/css";
 
+const scroll = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0.8rem);
+    opacity: 0.5;
+  }
+`;
+
+const swiperImages: string[] = ["w2.jpg", "w1.jpg", "DSC01409.JPG", "nasa_won.jpg"];
+
 export const IntroductionSwiper = () => {
+  const swiperItems = useMemo(() => {
+    return [
+      ...swiperImages.map((url) => (
+        <Box w="100%" h="100%" key={url} bg="white">
+          <Image src={url} w="100%" h="100%" objectFit="cover" alt="PortfolioImage" opacity={0.5} />
+        </Box>
+      )),
+    ];
+  }, []);
+
+  const svhSupport = useSvhSupport();
+
   return (
-    <Box position="relative" h="100vh">
-      <Box position="absolute" top="100px">
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      </Box>
-      <Box w="100%" h="100%" position="absolute" top="0" left="0">
+    <Box position="relative" h={svhSupport === false ? "90vh" : "100svh"} bg="#f0f1">
+      <Flex
+        zIndex={1}
+        w="100%"
+        h="100%"
+        position="absolute"
+        top="0"
+        left="0"
+        justify="center"
+        align="center"
+        backdropFilter="blur(4px)"
+      >
         <IntroductionCard />
-      </Box>
-      <Box w="100%" h="100%" position="absolute" top="0" left="0">
+      </Flex>
+      <Box w="100%" h="100%" position="absolute" top="0" left="0" zIndex={0}>
         <Swiper
-          spaceBetween={50}
-          slidesPerView={3}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
+          slidesPerView={1} //一度に表示するスライドの数
+          pagination={{
+            clickable: true,
+          }} //　何枚目のスライドかを示すアイコン、スライドの下の方にある
+          navigation={false}
+          loop={true}
+          modules={[Navigation, Autoplay, Pagination]}
+          speed={1500}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          style={{ height: "100%" }}
         >
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
+          {swiperItems.map((item, index) => (
+            <SwiperSlide key={index}>{item}</SwiperSlide>
+          ))}
         </Swiper>
       </Box>
+      <Flex position="absolute" bottom="50px" left="0" w="100%" justify="center" align="center" zIndex={1}>
+        <Icon
+          as={SlArrowDown}
+          fontSize="2rem"
+          color="white"
+          filter="drop-shadow(0 0 5px #0008)"
+          animation={`${scroll} 3s ease-in-out infinite`}
+        />
+      </Flex>
     </Box>
   );
 };

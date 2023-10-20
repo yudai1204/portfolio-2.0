@@ -55,7 +55,7 @@ type Props = {
 const MenuWide = (props: Props) => {
   const { active } = props;
   return (
-    <Box position="fixed" top={0} left={0} w="100%" h="60px" my="10px">
+    <Box position="fixed" top={0} left={0} w="100%" h="60px" my="10px" zIndex={1000}>
       <Flex w="100%" maxW="880px" margin="0 auto" h="100%" justify="center" align="center" gap="1rem">
         <Link href="/" _hover={{ opacity: 0.9 }} w="10%" h="100%" title="yudai04">
           <Flex w="100%" h="100%" align="center">
@@ -66,8 +66,8 @@ const MenuWide = (props: Props) => {
           w="90%"
           maxW="640px"
           h="100%"
-          bg="#fff8"
-          backdropFilter="blur(2px)"
+          bg="#f4f4f49f"
+          backdropFilter="blur(3px)"
           boxShadow="0 0 10px #8884"
           borderRadius="xl"
           justify="space-around"
@@ -90,7 +90,7 @@ const MenuWide = (props: Props) => {
                 align="center"
                 h="100%"
                 transition="0.3s"
-                _hover={{ bgColor: "#eee" }}
+                _hover={{ bgColor: "#fff9" }}
                 gap={1.5}
               >
                 <Icon as={link.icon} fontSize="lg" />
@@ -119,10 +119,10 @@ const MenuNarrow = (props: Props) => {
         w="100%"
         justify="left"
         align="center"
-        zIndex="100"
+        zIndex="1000"
         bg="#fff8"
         backdropFilter="blur(2px)"
-        boxShadow="0 0 10px #ccc4"
+        boxShadow="0 0 10px #ddd7"
         userSelect="none"
       >
         <Icon

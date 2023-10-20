@@ -5,11 +5,9 @@ import { IconImg } from "./iconImg";
 const appear = keyframes`
   from {
     opacity: 0;
-    transform: translateY(-1rem);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 `;
 
@@ -27,12 +25,16 @@ const IntroductionCardMain = () => (
       <Text fontSize={{ base: "xl", sm: "2xl" }} fontWeight="300">
         yudai04 / yudai1204
       </Text>
-      <Text fontSize="md" fontWeight="300" opacity="0.6">
-        Hiyama Yudai
+      <Text fontSize={{ base: "md", sm: "xl" }} fontWeight="300" opacity="0.6">
+        Engeneering Student
       </Text>
-      <Text fontSize="sm" fontWeight="300" opacity="0.6" mt={1}>
-        Chiba, Japan
-      </Text>
+      <VStack spacing={0} align="flex-start">
+        {["Web/Art/App Development", "UI/UX Design"].map((text) => (
+          <Text fontSize={{ base: "xs", sm: "md" }} fontWeight="300" opacity="0.6" key={text}>
+            {text}
+          </Text>
+        ))}
+      </VStack>
     </VStack>
   </Flex>
 );
@@ -42,16 +44,16 @@ export const IntroductionCard = () => {
 
   return (
     <Box
-      mx="auto"
+      h="fit-content"
       maxW="720px"
       w="80%"
-      bg="#fff5"
+      bg="#fff7"
       borderRadius=".5rem"
-      boxShadow="2px 2px 4px #feef0099"
-      backdropFilter="blur(4px)"
+      boxShadow="2px 2px 4px #fcd14644"
       css={css`
         animation: ${appear} 2s ease;
       `}
+      mx="auto"
     >
       <Flex h="fit-content">
         <Box bg={bg} borderLeftRadius="1000px" w=".5rem" />

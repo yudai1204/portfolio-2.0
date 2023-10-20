@@ -21,7 +21,7 @@ const Home = () => {
       </Head>
       <Box>
         <Menu active="home" />
-        <Box>
+        <Box zIndex={0}>
           <IntroductionSwiper />
         </Box>
 
