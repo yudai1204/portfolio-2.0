@@ -1,7 +1,7 @@
 import { Box, Button, Center, Text } from "@chakra-ui/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { IntroductionCard } from "../components/introductionCard";
+import { IntroductionSwiper } from "../components/introductionSwiper";
 import { Menu } from "../components/menu";
 import { Paragraph } from "../components/paragraph";
 
@@ -21,8 +21,8 @@ const Home = () => {
       </Head>
       <Box>
         <Menu active="home" />
-        <Box p="1rem" pt={{ base: "4rem", md: "7rem" }}>
-          <IntroductionCard />
+        <Box>
+          <IntroductionSwiper />
         </Box>
 
         <Paragraph title="About Me">

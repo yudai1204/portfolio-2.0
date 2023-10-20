@@ -41,18 +41,23 @@ export const IntroductionCard = () => {
   const bg = "linear-gradient(90deg, #fac11288, #feef0088)";
 
   return (
-    <Flex
+    <Box
       mx="auto"
       maxW="720px"
-      w="100%"
-      h="fit-content"
+      w="80%"
+      bg="#fff5"
+      borderRadius=".5rem"
+      boxShadow="2px 2px 4px #feef0099"
+      backdropFilter="blur(4px)"
       css={css`
         animation: ${appear} 2s ease;
       `}
     >
-      <Box bg={bg} borderLeftRadius="1000px" w=".5rem" />
-      <IntroductionCardMain />
-      <Box bg={bg} borderRightRadius="1000px" w=".5rem" />
-    </Flex>
+      <Flex h="fit-content">
+        <Box bg={bg} borderLeftRadius="1000px" w=".5rem" />
+        <IntroductionCardMain />
+        <Box bg={bg} borderRightRadius="1000px" w=".5rem" />
+      </Flex>
+    </Box>
   );
 };
