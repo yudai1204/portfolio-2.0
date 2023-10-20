@@ -7,6 +7,9 @@ import "swiper/css";
 export const IntroductionSwiper = () => {
   return (
     <Box position="relative" h="100vh">
+      <Box position="absolute" top="100px">
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      </Box>
       <Box w="100%" h="100%" position="absolute" top="0" left="0">
         <IntroductionCard />
       </Box>
