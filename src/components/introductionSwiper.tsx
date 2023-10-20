@@ -1,4 +1,4 @@
-import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IntroductionCard } from "./introductionCard";
 
