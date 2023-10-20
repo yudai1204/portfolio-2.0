@@ -1,9 +1,12 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Button, Center, Text } from "@chakra-ui/react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { IntroductionCard } from "../components/introductionCard";
 import { Menu } from "../components/menu";
+import { Paragraph } from "../components/paragraph";
 
 const Home = () => {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -21,6 +24,45 @@ const Home = () => {
         <Box p="1rem" pt={{ base: "4rem", md: "7rem" }}>
           <IntroductionCard />
         </Box>
+
+        <Paragraph title="About Me">
+          <Text>
+            中学でロボコンに出場する部活動に入りロボットプログラミングや電子工作を学びました。
+            また、同時期にBasic言語で簡易的なゲームやツール等を作成し、Windows上でのGUI開発を学びました。
+          </Text>
+          <Text>
+            高校では文化祭でApacheを使用したWebサーバー運用の知識も携えました。
+            現在は大学で情報系を専攻し、フロントエンドを中心にデジタルアートやゲーム開発、電子工作などを行っています。
+          </Text>
+          <Center w="100%">
+            <Button
+              onClick={() => {
+                router.push("/about");
+              }}
+              mt=".5rem"
+              colorScheme="teal"
+              px="8rem"
+            >
+              About
+            </Button>
+          </Center>
+        </Paragraph>
+
+        <Paragraph title="Works">
+          <Text>詳細はこちらのページをご覧ください。</Text>
+          <Center w="100%">
+            <Button
+              onClick={() => {
+                router.push("/about");
+              }}
+              mt=".5rem"
+              colorScheme="teal"
+              px="8rem"
+            >
+              Works
+            </Button>
+          </Center>
+        </Paragraph>
       </Box>
     </>
   );

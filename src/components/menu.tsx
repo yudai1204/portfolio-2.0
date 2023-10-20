@@ -13,6 +13,7 @@ import {
   Divider,
   DrawerBody,
 } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { GoHome, GoFileDirectory, GoPerson, GoBook } from "react-icons/go";
 import { IconImg } from "./iconImg";
@@ -214,5 +215,10 @@ const MenuNarrow = (props: Props) => {
 export const Menu = (props: Props) => {
   const { active } = props;
   const wideHeader = useWideHeader();
-  return <>{wideHeader ? <MenuWide active={active} /> : <MenuNarrow active={active} />}</>;
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
+  return <>{isLoaded && (wideHeader ? <MenuWide active={active} /> : <MenuNarrow active={active} />)}</>;
 };
