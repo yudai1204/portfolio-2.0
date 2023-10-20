@@ -97,7 +97,7 @@ const Home = () => {
           <Center w="100%">
             <Button
               onClick={() => {
-                router.push("/about");
+                router.push("/works");
               }}
               mt=".5rem"
               colorScheme="teal"
