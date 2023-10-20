@@ -36,7 +36,7 @@ export const IntroductionSwiper = () => {
   const svhSupport = useSvhSupport();
 
   return (
-    <Box position="relative" h={svhSupport === false ? "90vh" : "100svh"} bg="#f0f1">
+    <Box position="relative" h={svhSupport === false ? "90vh" : "100svh"} bg="#fff" boxShadow="0 0 10px #0006">
       <Flex
         zIndex={1}
         w="100%"

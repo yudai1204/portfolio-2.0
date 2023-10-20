@@ -9,7 +9,7 @@ type Props = {
 export const Paragraph = (props: Props) => {
   const { title, children, animation = true } = props;
   const ParagraphMain = () => (
-    <Box maxW="780px" mx="auto" px="1rem" mt="2rem">
+    <Box maxW="780px" mx="auto" px="1rem" mt="2rem" mb="3rem">
       <Text fontSize="2xl" fontWeight="bold" mb=".8rem">
         {title}
       </Text>
