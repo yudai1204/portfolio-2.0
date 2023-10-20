@@ -147,7 +147,7 @@ const MenuNarrow = (props: Props) => {
               <Icon as={AiOutlineClose} fontSize="2.4rem" color="gray.700" cursor="pointer" onClick={onMenuClose} />
             </Box>
             <VStack>
-              <Link href="/" _hover={{ opacity: 0.9 }} w="fit-content" transition="0.3s">
+              <Box>
                 <Flex
                   align="center"
                   justify="center"
@@ -167,7 +167,7 @@ const MenuNarrow = (props: Props) => {
                     </Text>
                   </Box>
                 </Flex>
-              </Link>
+              </Box>
               <VStack spacing={2} px="15px">
                 {links.map((link, idx) => (
                   <>
