@@ -163,7 +163,7 @@ const MenuNarrow = (props: Props) => {
                   <Box>
                     <Text>yudai04</Text>
                     <Text color="gray.400" fontSize="sm">
-                      Hiyama Yudai
+                      Engeneering Student
                     </Text>
                   </Box>
                 </Flex>

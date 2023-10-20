@@ -46,7 +46,7 @@ export const IntroductionSwiper = () => {
         left="0"
         justify="center"
         align="center"
-        backdropFilter="blur(4px)"
+        backdropFilter="blur(3px)"
       >
         <IntroductionCard />
       </Flex>
