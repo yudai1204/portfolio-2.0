@@ -1,24 +1,9 @@
-import { Box, Text, Heading } from "@chakra-ui/react";
+import { Box, Grid, Heading } from "@chakra-ui/react";
 import Head from "next/head";
 import { Footer } from "../components/footer";
 import { Menu } from "../components/menu";
+import { Work } from "../components/work";
 import { works } from "../data";
-import type { Work } from "../types";
-
-type Props = {
-  work: Work;
-};
-const Work = (props: Props) => {
-  const { work } = props;
-  return (
-    <Box>
-      <Heading as="h4" fontSize="1.2rem">
-        {work.title}
-      </Heading>
-      <Text>{work.shortDescription}</Text>
-    </Box>
-  );
-};
 
 const Works = () => {
   return (
@@ -26,11 +11,20 @@ const Works = () => {
       <Head>
         <title>Works | yudai04 portfolio</title>
       </Head>
-      <Box bgColor="#ffe8b611" minH="100vh">
+      <Box bgColor="#ffe8b611" minH="100vh" pt={{ base: "3rem", md: "5rem" }}>
         <Menu active="works" />
-        {works.map((work) => (
-          <Work key={work.title} work={work} />
-        ))}
+        <Heading as="h2" size="lg" textAlign="center" py="2rem">
+          Works
+        </Heading>
+        <Grid
+          templateColumns={{ base: "repeat(1, 1fr)", sm: "repeat(2, 1fr)", xl: "repeat(3, 1fr)" }}
+          gap={6}
+          px={{ base: "2rem", md: "5rem" }}
+        >
+          {works.map((work) => (
+            <Work key={work.title} work={work} />
+          ))}
+        </Grid>
         <Footer />
       </Box>
     </>

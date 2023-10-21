@@ -87,6 +87,10 @@ export const works: Work[] = [
         name: "Webサイト",
         url: "https://yudai04.dev/",
       },
+      {
+        name: "1代目",
+        url: "https://yudai1204.github.io/portfolio-test/",
+      },
     ],
     tags: ["React", "TypeScript", "Next.js", "Chakra UI", "個人開発"],
   },

@@ -2,7 +2,7 @@ import { Box, Image, Flex, Icon, Text } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import { useMemo } from "react";
 import { SlArrowDown } from "react-icons/sl";
-import { Pagination, Navigation, Autoplay } from "swiper/modules"; //使いたい機能をインポート
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IntroductionCard } from "./introductionCard";
 import { useSvhSupport } from "@/utils/useSvhSupport";
@@ -52,10 +52,7 @@ export const IntroductionSwiper = () => {
       </Flex>
       <Box w="100%" h="100%" position="absolute" top="0" left="0" zIndex={0}>
         <Swiper
-          slidesPerView={1} //一度に表示するスライドの数
-          pagination={{
-            clickable: true,
-          }} //　何枚目のスライドかを示すアイコン、スライドの下の方にある
+          slidesPerView={1}
           navigation={false}
           loop={true}
           modules={[Navigation, Autoplay, Pagination]}
