@@ -5,11 +5,14 @@ export const works: Work[] = [
   {
     title: "Moonquake Viewer",
     year: "2023",
-    shortDescription: (
+    shortDescription:
+      "【ハッカソン優勝作品】月面上地震をマッピングするWebアプリです。メイン機能は2日間、それ以外をその後の数日間を使って実装しました。",
+    longDescription: (
       <>
-        <Text>NASA Space Apps Challenge 2023 横浜大会優勝・世界大会出場作品</Text>
+        <Text fontWeight="600">NASA Space Apps Challenge 2023 横浜大会優勝・世界大会出場作品</Text>
         <Text>
-          初出場のハッカソンで、2日間で作り上げました。同じく初出場メンバー計4人でチームを作成し、リーダーとして環境構築からコーディング、レビューまで行いました。
+          月面上地震をマッピングするWebアプリです。過去の地震や月の関連情報などを見やすく表示します。メイン機能は2日間、それ以外をその後の数日間を使って実装しました。
+          自分自身初めてのハッカソンで、同じく初出場メンバー計4人でチームを作成し、リーダーとして環境構築からコーディング、レビューまで行いました。
           詳細は<Link href="https://github.com/yudai1204/nasa-hackathon-2023-yokohama">GitHubレポジトリ</Link>
           をご確認ください。
         </Text>
@@ -30,7 +33,8 @@ export const works: Work[] = [
   {
     title: "ScombZ Utilities",
     year: "2022",
-    shortDescription: (
+    shortDescription: "大学の学生ポータルサイトのUI/UXを改善し、学生にとって使いやすくするためのブラウザ拡張機能です。",
+    longDescription: (
       <>
         2023年度から学生ポータルサイトが一新され、以前に比べUI/UXが使いづらくなったと感じたため、それを修正するブラウザ拡張機能を作成し公開しました。
         この拡張機能自体は私がJavaScriptの勉強を兼ねて1人で制作を開始しましたが、同じように使いにくいと感じた友人が途中で数名合流しGit開発に移行しました。
@@ -59,7 +63,16 @@ export const works: Work[] = [
   {
     title: "Bingo App",
     year: "2023",
-    shortDescription: <>サークルの親睦会での使用を目的として、Chakra UIを使って1時間程度で作成しました。</>,
+    shortDescription:
+      "簡易的なビンゴマシンです。サークルの親睦会での使用を目的として、Chakra UIを使って1.5時間程度で作成しました。",
+    longDescription: (
+      <>
+        <Text>
+          簡易的なビンゴマシンです。サークルの親睦会での使用を目的として、Chakra UIを使って1.5時間程度で作成しました。
+        </Text>
+        <Text>合宿中のBingoをより盛り上げるためにわかりやすく使いやすいUI/UXを目指しました。</Text>
+      </>
+    ),
     imageUrls: ["bingoapp.png"],
     githubUrl: "https://github.com/yudai1204/bingo-counter",
     urls: [
@@ -74,10 +87,11 @@ export const works: Work[] = [
   {
     title: "ポートフォリオサイト",
     year: "2023",
-    shortDescription: (
+    shortDescription: "このポートフォリオサイトです。実は2代目で、以前のものとは分離して完全な作り直しを行いました。",
+    longDescription: (
       <>
         <Text>このポートフォリオサイトです。実は2代目で、以前のものとは分離して完全な作り直しを行いました。</Text>
-        <Text>以前のものはJS / vanilla Next.jsでしたが、2代目でTS / Chakra Uiになりました</Text>
+        <Text>以前のものはJS / vanilla Next.jsでしたが、2代目でTS / Chakra UIになりました</Text>
       </>
     ),
     imageUrls: ["portfolio.png"],
@@ -98,10 +112,12 @@ export const works: Work[] = [
   {
     title: "GoogleDrive Uploder(仮)",
     year: "2022",
-    shortDescription: (
+    shortDescription:
+      "ファイル送り主がGoogleアカウントを持っていなくても、送り先のGoogleドライブ上にアップロードできるGASアプリケーションです。",
+    longDescription: (
       <>
         <Text>
-          Googleアカウントを持っていなくてもGoogleドライブ上にアップロードできるGASアプリケーションです。クラウドソーシングサイトでの依頼で提案、作成しました。
+          ファイル送り主がGoogleアカウントを持っていなくても、送り先のGoogleドライブ上にアップロードできるGASアプリケーションです。クラウドソーシングサイトでの依頼で提案、作成しました。
         </Text>
         <Text>
           Googleアカウントでログインできない端末から動画をアップロードするのですが、事前にGoogleフォームに回答をしてもらい、フォームに記載されたメールアドレスにuuidを含ませたURLを送信することによってアップロード者の識別を図りセキュリティ上の問題を解決しています。
@@ -115,7 +131,9 @@ export const works: Work[] = [
   {
     title: "AI診察Bot",
     year: "2023",
-    shortDescription: (
+    shortDescription:
+      "LINE Messaging API及びChatGPTを用いた自動返信Botです。GPTがファインチューニング対応前に制作したため、擬似的にファインチューニングを行っています。",
+    longDescription: (
       <>
         <Text>
           LINE Messaging API及びChatGPTを用いた自動返信Botです。
@@ -135,14 +153,15 @@ export const works: Work[] = [
   {
     title: "文化祭ステージ企画",
     year: "2019",
-    shortDescription: (
+    shortDescription: "ステージ背景の3枚のプロジェクタを管理するアプリケーションです。",
+    longDescription: (
       <>
         <Text>
-          GCP無料枠を使い、Google Compute Engine上にApacheサーバーを立てて運営。
-          ドメイン取得、SSL化、PHPインストールからコーディングまでシステム全般を担当。
-          また、プロジェクター3台を制御する自作プログラムを作成(HSP3)。
-          スマホのカメラを生中継したり動画を再生したりを手元のコンピューターから制御。
-          ニコニコ動画のようなコメントスクリーンシステムを制作したが、スマホが基本的に禁止のため本番では実現しなかった。
+          GCP無料枠を使い、Google Compute Engine上にApacheサーバーを立てて運営しました。
+          ドメイン取得、SSL化、PHPインストールからコーディングまでシステム全般を担当しました。
+          また、プロジェクター3台を制御する自作プログラムを作成(HSP3)しました。
+          スマホのカメラを生中継したり動画を再生したりを手元のコンピューターから制御できます。
+          ニコニコ動画のようなコメントスクリーンシステムを制作しましたが、スマホが基本的に禁止のため本番では実現しませんでした。
         </Text>
       </>
     ),
@@ -153,10 +172,12 @@ export const works: Work[] = [
   {
     title: "ScombZ Status Bot",
     year: "2023",
-    shortDescription: (
+    shortDescription:
+      "大学の学生ポータルサイトの障害情報と、ホームページで公開されている情報課からのお知らせをリアルタイムで報告するBotです。",
+    longDescription: (
       <>
         <Text>
-          学生ポータルサイトScombZの障害情報と、弊学情報課からのお知らせを報告するBotです。
+          学生ポータルサイトScombZの障害情報と、弊学情報課からのお知らせをリアルタイムで報告するBotです。
           情報化からのお知らせには通知がないため、SNSで情報を発信することにより多くの人に伝えます Twitter
           APIの有料化に伴ってなにが無料版でできるのかを確認したく制作しました。
         </Text>
@@ -175,7 +196,9 @@ export const works: Work[] = [
   {
     title: "みんなで作る花火大会",
     year: "2022",
-    shortDescription: (
+    shortDescription:
+      "タブレットやスマートフォンで描いた絵がその場で花火となって打ちあがるというインタラクティブアート作品です。",
+    longDescription: (
       <>
         <Text>
           学祭に向けShibaLabで発表したインタラクティブアート作品です。
@@ -198,7 +221,8 @@ export const works: Work[] = [
   {
     title: "Cat and Seek",
     year: "2023",
-    shortDescription: (
+    shortDescription: "懐中電灯を動かして隠れた猫を探すというインタラクティブアート作品です。",
+    longDescription: (
       <>
         <Text>
           学祭に向けShibaLabで発表したインタラクティブアート作品です。
@@ -221,12 +245,14 @@ export const works: Work[] = [
   {
     title: "ShibaLab Webサイト",
     year: "2022",
-    shortDescription: (
+    shortDescription: "自身が所属するメディアアート制作サークルのホームページを作成しました。",
+    longDescription: (
       <>
         <Text>
           自身が所属するメディアアート制作サークルのホームページを作成しました。
           デザインからコーディングまでを1人で行いました。
         </Text>
+        <Text>HTML/CSSとネイティブのJavaScriptを使って制作を行いました。</Text>
       </>
     ),
     imageUrls: ["shibalabWeb.png"],
@@ -243,7 +269,8 @@ export const works: Work[] = [
   {
     title: "bolide for Chrome",
     year: "2023",
-    shortDescription: (
+    shortDescription: "ニコニコ動画のように画面にコメントを流すブラウザ拡張機能を1日で制作しました。",
+    longDescription: (
       <>
         <Text>
           ニコニコ動画のように画面にコメントを流すソフトウェアであるBolideのブラウザ拡張機能版を1日で制作しました。
@@ -259,9 +286,10 @@ export const works: Work[] = [
   {
     title: "ShibaLab 紹介動画",
     year: "2023",
-    shortDescription: (
+    shortDescription: "新入生向けに所属するサークルであるShibaLabの紹介動画を作成しました。",
+    longDescription: (
       <>
-        <Text>新入生向けにサークル紹介動画を作成しました。</Text>
+        <Text>新入生向けに所属するサークルであるShibaLabの紹介動画を作成しました。</Text>
       </>
     ),
     videoUrls: ["C2-YqtxBFP0"],

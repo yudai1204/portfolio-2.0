@@ -12,6 +12,13 @@ import {
   Link,
   Badge,
   Flex,
+  useDisclosure,
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalOverlay,
+  ModalCloseButton,
 } from "@chakra-ui/react";
 import { useMemo } from "react";
 import { BsGithub } from "react-icons/bs";
@@ -24,6 +31,91 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+
+type ModalProps = {
+  work: WorkType;
+  onClose: () => void;
+  isOpen: boolean;
+  imageNodes: JSX.Element[];
+};
+const WorkModal = (props: ModalProps) => {
+  const { work, onClose, isOpen, imageNodes } = props;
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} size={{ base: "full", md: "3xl", xl: "5xl" }}>
+      <ModalOverlay />
+      <ModalContent mt="32px" maxH="calc(100% - 64px)">
+        <ModalHeader boxShadow="0 0 6px #6664">
+          <Heading as="h2" size="lg">
+            {work.title}
+          </Heading>
+        </ModalHeader>
+        <ModalCloseButton />
+        <Box overflow="auto">
+          <ModalBody>
+            {work.tags && (
+              <Flex gap={1} wrap="wrap" py="1rem">
+                {work.tags.map((tag) => (
+                  <Badge key={tag} fontSize="sm" color="gray.600">
+                    {tag}
+                  </Badge>
+                ))}
+              </Flex>
+            )}
+            <Swiper
+              slidesPerView={1}
+              modules={[Navigation, Autoplay, Pagination]}
+              navigation={true}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }}
+              speed={1000}
+              autoplay={{
+                delay: 7000,
+                // disableOnInteraction: false,
+              }}
+              style={{ width: "100%", maxWidth: "480px", boxShadow: "0 0 6px #666a", borderRadius: ".5rem" }}
+            >
+              {imageNodes.map((node, idx) => (
+                <SwiperSlide key={idx}>{node}</SwiperSlide>
+              ))}
+            </Swiper>
+            <Box p="2rem">
+              <Box py="1rem">{work.longDescription}</Box>
+              <Box>
+                {work.urls &&
+                  work.urls.map((item) => (
+                    <Link key={item.url} variant="outline" href={item.url} target="_blank" rel="noopener">
+                      <Text textDecor="underline" fontSize="90%" color="gray.600">
+                        {item.name}
+                        <Icon as={FiExternalLink} ml="2px" />
+                      </Text>
+                    </Link>
+                  ))}
+              </Box>
+            </Box>
+            <Box w="100%" py="0.5rem">
+              <Flex w="100%" align="center" gap={2}>
+                {work.githubUrl && (
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      window.open(work.githubUrl, "_blank");
+                    }}
+                  >
+                    <Icon aria-label="Github" as={BsGithub} variant="solid" />
+                    <Text ml="2">Github</Text>
+                  </Button>
+                )}
+                <Text>制作: {work.year}年</Text>
+              </Flex>
+            </Box>
+          </ModalBody>
+        </Box>
+      </ModalContent>
+    </Modal>
+  );
+};
 
 type Props = {
   work: WorkType;
@@ -49,6 +141,8 @@ export const Work = (props: Props) => {
     ],
     [work],
   );
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Card direction="column" overflow="hidden" variant="outline" position="relative">
@@ -101,7 +195,7 @@ export const Work = (props: Props) => {
 
         <CardFooter position="absolute" bottom="0" left="0" w="100%" gap={1}>
           {work.longDescription && (
-            <Button variant="outline" colorScheme="teal">
+            <Button variant="outline" colorScheme="teal" onClick={onOpen}>
               View More
             </Button>
           )}
@@ -118,6 +212,7 @@ export const Work = (props: Props) => {
           )}
         </CardFooter>
       </Stack>
+      <WorkModal work={work} onClose={onClose} isOpen={isOpen} imageNodes={imageNodes} />
     </Card>
   );
 };

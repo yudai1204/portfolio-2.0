@@ -1,4 +1,4 @@
-import { Box, Skeleton } from "@chakra-ui/react";
+import { Box, Flex, Skeleton, Spinner } from "@chakra-ui/react";
 
 export const CanvaSlide = () => {
   return (
@@ -17,10 +17,13 @@ export const CanvaSlide = () => {
         top="0"
         left="0"
         zIndex={0}
-        startColor="#fbe5ed"
-        endColor="#ffe8b6"
+        startColor="#fbe5ed77"
+        endColor="#ffe8b677"
         borderRadius="1rem"
       />
+      <Flex position="absolute" top="0" left="0" zIndex={0} w="100%" h="100%" justify="center" align="center">
+        <Spinner size="xl" />
+      </Flex>
       <iframe
         loading="lazy"
         src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFlMuGeCWA&#x2F;view?embed"
