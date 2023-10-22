@@ -38,7 +38,7 @@ type ModalProps = {
   isOpen: boolean;
   imageNodes: JSX.Element[];
 };
-const WorkModal = (props: ModalProps) => {
+export const WorkModal = (props: ModalProps) => {
   const { work, onClose, isOpen, imageNodes } = props;
   return (
     <Modal isOpen={isOpen} onClose={onClose} size={{ base: "full", md: "3xl", xl: "5xl" }}>

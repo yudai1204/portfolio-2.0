@@ -10,6 +10,7 @@ import { Paragraph } from "../components/paragraph";
 import { SkillDetail } from "../components/skillDetail";
 import { affiliations, awards, skills } from "../data";
 import { CustomButton as Button } from "@/components/customButton";
+import { WorksCarousel } from "@/components/worksCarousel";
 
 const Home = () => {
   const router = useRouter();
@@ -105,6 +106,9 @@ const Home = () => {
           <Divider maxW="820px" mx="auto" borderColor="#ccc" />
 
           <Paragraph title="Works">
+            <Box w="100%" m="1rem" mx="auto" maxW="580px">
+              <WorksCarousel />
+            </Box>
             <Text>過去に制作した作品など、詳細はこちらのページをご覧ください。</Text>
             <Center w="100%">
               <Button
