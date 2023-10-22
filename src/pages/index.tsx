@@ -92,7 +92,7 @@ const Home = () => {
               <>
                 {!aff.link && <Text key={aff.name}>{aff.name}</Text>}
                 {aff.link && (
-                  <Link href={aff.link}>
+                  <Link href={aff.link} isExternal>
                     <Text key={aff.name}>
                       {aff.name + " "}
                       <Icon as={FiExternalLink} />

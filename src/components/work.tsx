@@ -85,8 +85,8 @@ export const WorkModal = (props: ModalProps) => {
               <Box>
                 {work.urls &&
                   work.urls.map((item) => (
-                    <Link key={item.url} variant="outline" href={item.url} target="_blank" rel="noopener">
-                      <Text textDecor="underline" fontSize="90%" color="gray.600">
+                    <Link key={item.url} variant="outline" href={item.url} isExternal w="fit-content">
+                      <Text textDecor="underline" fontSize="90%" color="gray.600" w="fit-content" display="block">
                         {item.name}
                         <Icon as={FiExternalLink} ml="2px" />
                       </Text>

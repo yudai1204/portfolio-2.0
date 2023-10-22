@@ -20,7 +20,7 @@ const scroll = keyframes`
   }
 `;
 
-const swiperImages: string[] = ["w2.jpg", "w1.jpg", "DSC01409.JPG", "nasa_won.jpg"];
+const swiperImages: string[] = ["nekocafe_filter.webp", "nasa_won.jpg", "w1.jpg", "DSC01409.JPG", "w2.jpg"];
 
 export const IntroductionSwiper = () => {
   const swiperItems = useMemo(() => {

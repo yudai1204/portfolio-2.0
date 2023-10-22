@@ -18,7 +18,7 @@ export const works: Work[] = [
         </Text>
       </>
     ),
-    imageUrls: ["moonquake1.png"],
+    imageUrls: ["moonquake1.jpg"],
     videoUrls: ["Il3rgj9Lo7g"],
     githubUrl: "https://github.com/yudai1204/nasa-hackathon-2023-yokohama",
     urls: [
@@ -94,7 +94,7 @@ export const works: Work[] = [
         <Text>以前のものはJS / vanilla Next.jsでしたが、2代目でTS / Chakra UIになりました</Text>
       </>
     ),
-    imageUrls: ["portfolio.png"],
+    imageUrls: ["portfolio.jpg"],
     githubUrl: "https://github.com/yudai1204/portfolio-2.0",
     urls: [
       {
@@ -255,7 +255,7 @@ export const works: Work[] = [
         <Text>HTML/CSSとネイティブのJavaScriptを使って制作を行いました。</Text>
       </>
     ),
-    imageUrls: ["shibalabWeb.png"],
+    imageUrls: ["shibalabWeb.jpg"],
     tags: ["HTML", "CSS", "JavaScript", "個人開発"],
     githubUrl: "https://github.com/Shiba-Lab/new-website-2022",
     urls: [
