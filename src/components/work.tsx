@@ -74,7 +74,7 @@ export const WorkModal = (props: ModalProps) => {
                 delay: 7000,
                 // disableOnInteraction: false,
               }}
-              style={{ width: "100%", maxWidth: "480px", boxShadow: "0 0 6px #666a", borderRadius: ".5rem" }}
+              style={{ width: "100%", maxWidth: "640px", boxShadow: "0 0 6px #666a", borderRadius: ".5rem" }}
             >
               {imageNodes.map((node, idx) => (
                 <SwiperSlide key={idx}>{node}</SwiperSlide>
@@ -171,7 +171,7 @@ export const Work = (props: Props) => {
         >
           {imageNodes.map((node, idx) => (
             <SwiperSlide key={idx}>
-              <Box transition="0.5s" _groupHover={{ transform: "scale(1.03)" }}>
+              <Box transition="0.5s" _groupHover={{ transform: "scale(1.03)" }} onClick={onOpen}>
                 {node}
               </Box>
             </SwiperSlide>
