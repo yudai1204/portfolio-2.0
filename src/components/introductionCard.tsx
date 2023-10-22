@@ -51,7 +51,7 @@ export const IntroductionCard = () => {
       borderRadius=".5rem"
       boxShadow="2px 2px 4px #fcd14644"
       css={css`
-        animation: ${appear} 2s ease;
+        animation: ${appear} 2s ease-in;
       `}
       mx="auto"
     >
