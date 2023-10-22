@@ -47,7 +47,7 @@ export const IntroductionCard = () => {
       h="fit-content"
       maxW="720px"
       w="80%"
-      bg="#fff7"
+      bg="#fffa"
       borderRadius=".5rem"
       boxShadow="2px 2px 4px #fcd14644"
       css={css`

@@ -122,11 +122,10 @@ type Props = {
 };
 export const Work = (props: Props) => {
   const { work } = props;
-
   const imageNodes = useMemo(
     () => [
       ...(work?.imageUrls?.map((url) => (
-        <Image key={url} src={`/${url}`} alt={work.title} w="100%" aspectRatio="16/9" objectFit="cover" />
+        <Image key={url} src={`/${url}`} alt={work.title} w="100%" aspectRatio="16/10" objectFit="cover" />
       )) || []),
       ...(work?.videoUrls?.map((url) => (
         <iframe
@@ -135,7 +134,7 @@ export const Work = (props: Props) => {
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
-          style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover" }}
+          style={{ width: "100%", aspectRatio: "16/10", objectFit: "cover" }}
         />
       )) || []),
     ],
@@ -145,7 +144,15 @@ export const Work = (props: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Card direction="column" overflow="hidden" variant="outline" position="relative">
+    <Card
+      direction="column"
+      overflow="hidden"
+      variant="outline"
+      position="relative"
+      transition="0.3s"
+      _hover={{ bgColor: "#fafafa", boxShadow: "2px 2px 4px #6662" }}
+      role="group"
+    >
       <Box w="100%">
         <Swiper
           slidesPerView={1}
@@ -163,12 +170,16 @@ export const Work = (props: Props) => {
           style={{ width: "100%", boxShadow: "0 0 6px #6663" }}
         >
           {imageNodes.map((node, idx) => (
-            <SwiperSlide key={idx}>{node}</SwiperSlide>
+            <SwiperSlide key={idx}>
+              <Box transition="0.5s" _groupHover={{ transform: "scale(1.03)" }}>
+                {node}
+              </Box>
+            </SwiperSlide>
           ))}
         </Swiper>
       </Box>
       <Stack>
-        <CardBody mb="3rem">
+        <CardBody mb="3rem" onClick={onOpen} cursor="pointer">
           <Heading size="md">{work.title}</Heading>
           <Text py="2">{work.year}</Text>
           <Text py="2">{work.shortDescription}</Text>
@@ -180,7 +191,12 @@ export const Work = (props: Props) => {
                 </Badge>
               ))}
           </Flex>
-          <Box>
+          <Box
+            pb=".5rem"
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
             {work.urls &&
               work.urls.map((item) => (
                 <Link key={item.url} variant="outline" href={item.url} target="_blank" rel="noopener">

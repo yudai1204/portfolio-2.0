@@ -12,8 +12,9 @@ import {
   VStack,
   Divider,
   DrawerBody,
+  DrawerCloseButton,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { GoHome, GoFileDirectory, GoPerson, GoBook } from "react-icons/go";
 import { IconImg } from "./iconImg";
@@ -109,6 +110,7 @@ const MenuWide = (props: Props) => {
 const MenuNarrow = (props: Props) => {
   const { active } = props;
   const { isOpen: isMenuOpen, onOpen: onMenuOpen, onClose: onMenuClose } = useDisclosure();
+  const closeRef = useRef(null);
   return (
     <>
       <Flex
@@ -120,9 +122,9 @@ const MenuNarrow = (props: Props) => {
         justify="left"
         align="center"
         zIndex="1000"
-        bg="#fff8"
-        backdropFilter="blur(2px)"
-        boxShadow="0 0 10px #ddd7"
+        bg="#fffa"
+        backdropFilter="blur(3px)"
+        boxShadow="0 0 10px #ddda"
         userSelect="none"
       >
         <Icon
@@ -139,34 +141,47 @@ const MenuNarrow = (props: Props) => {
           </Text>
         </Box>
       </Flex>
-      <Drawer isOpen={isMenuOpen} placement="left" onClose={onMenuClose} size="xs" closeOnEsc={true}>
+      <Drawer
+        isOpen={isMenuOpen}
+        placement="left"
+        onClose={onMenuClose}
+        size="xs"
+        closeOnEsc={true}
+        initialFocusRef={closeRef}
+      >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerBody w="100%" p={0}>
             <Box p="8px">
               <Icon as={AiOutlineClose} fontSize="2.4rem" color="gray.700" cursor="pointer" onClick={onMenuClose} />
             </Box>
+            <DrawerCloseButton opacity="0" ref={closeRef} position="absolute" top="0" left="0" />
             <VStack>
               <Box>
-                <Flex
-                  align="center"
-                  justify="center"
-                  mb="20px"
-                  px="48px"
-                  py="16px"
-                  borderRadius="2xl"
-                  gap={5}
-                  boxShadow="1px 1px 4px #6663"
-                  w="fit-content"
-                >
-                  <IconImg size="48px" />
-                  <Box>
-                    <Text>yudai04</Text>
-                    <Text color="gray.400" fontSize="sm">
-                      Engeneering Student
-                    </Text>
-                  </Box>
-                </Flex>
+                <Link href="/" _hover={{ opacity: 1 }} role="group" w="100%" h="100%">
+                  <Flex
+                    align="center"
+                    justify="center"
+                    mb="20px"
+                    px="48px"
+                    py="16px"
+                    borderRadius="2xl"
+                    gap={5}
+                    boxShadow="1px 1px 4px #9903"
+                    w="fit-content"
+                    transition=".3s"
+                    bg="linear-gradient(70deg, #fffabc33, #e0ebaf33)"
+                    _groupHover={{ bg: "linear-gradient(70deg, #fffabc55, #e0ebaf55)", boxShadow: "1px 2px 4px #9904" }}
+                  >
+                    <IconImg size="48px" />
+                    <Box>
+                      <Text>yudai04</Text>
+                      <Text color="gray.400" fontSize="sm">
+                        Engeneering Student
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Link>
               </Box>
               <VStack spacing={2} px="15px">
                 {links.map((link, idx) => (
