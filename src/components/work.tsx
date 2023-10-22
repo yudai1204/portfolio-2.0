@@ -85,8 +85,25 @@ export const WorkModal = (props: ModalProps) => {
               <Box>
                 {work.urls &&
                   work.urls.map((item) => (
-                    <Link key={item.url} variant="outline" href={item.url} isExternal w="fit-content">
-                      <Text textDecor="underline" fontSize="90%" color="gray.600" w="fit-content" display="block">
+                    <Link
+                      key={item.url}
+                      variant="outline"
+                      href={item.url}
+                      isExternal
+                      w="fit-content"
+                      display="block"
+                      borderRadius="5px"
+                      _hover={{ bgColor: "gray.100" }}
+                    >
+                      <Text
+                        textDecor="underline"
+                        fontSize="90%"
+                        color="gray.600"
+                        w="fit-content"
+                        display="block"
+                        py="3px"
+                        px="5px"
+                      >
                         {item.name}
                         <Icon as={FiExternalLink} ml="2px" />
                       </Text>
@@ -199,8 +216,26 @@ export const Work = (props: Props) => {
           >
             {work.urls &&
               work.urls.map((item) => (
-                <Link key={item.url} variant="outline" href={item.url} target="_blank" rel="noopener">
-                  <Text textDecor="underline" fontSize="90%" color="gray.600">
+                <Link
+                  key={item.url}
+                  variant="outline"
+                  href={item.url}
+                  isExternal
+                  w="fit-content"
+                  display="block"
+                  _hover={{ bgColor: "gray.200" }}
+                  borderRadius="5px"
+                >
+                  <Text
+                    textDecor="underline"
+                    fontSize="90%"
+                    color="gray.600"
+                    w="fit-content"
+                    display="block"
+                    px="5px"
+                    py="3px"
+                    my="1px"
+                  >
                     {item.name}
                     <Icon as={FiExternalLink} ml="2px" />
                   </Text>
