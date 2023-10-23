@@ -12,6 +12,7 @@ export const CustomButton = (props: any) => {
       _hover={{ boxShadow: "0 0 4px #f0800f00" }}
       transition=".5s"
       mt={props.mt || 0}
+      mb={props.mb || "10px"}
     >
       <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" color="white" fontWeight="600">
         {props.children}

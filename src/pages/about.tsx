@@ -2,9 +2,11 @@ import { Box, Text, Heading } from "@chakra-ui/react";
 import Head from "next/head";
 import { Footer } from "../components/footer";
 import { Menu } from "../components/menu";
+import { SkillDetail } from "../components/skillDetail";
 import { CanvaSlide } from "@/components/canvaSlide";
 import { IntroductionCard } from "@/components/introductionCard";
 import { Paragraph } from "@/components/paragraph";
+import { skills } from "@/data";
 
 const About = () => {
   return (
@@ -18,8 +20,21 @@ const About = () => {
           <Heading as="h2" size="lg" textAlign="center" py="2rem">
             About
           </Heading>
-          <Box maxW="780px" mx="auto" py="2rem">
+          <Box maxW="780px" mx="auto" py="2rem" px="1rem">
             <CanvaSlide />
+            <Box m="1rem">
+              Link:{" "}
+              <a
+                href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFlMuGeCWA&#x2F;view?utm_content=DAFlMuGeCWA&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+                target="_blank"
+                rel="noopener"
+                style={{
+                  textDecoration: "underline",
+                }}
+              >
+                yudai04 | Self-Introduction
+              </a>
+            </Box>
           </Box>
           <Box maxW="780px" mx="auto" py="2rem">
             <Paragraph title="About Me">
@@ -48,6 +63,13 @@ const About = () => {
               <Text>
                 そのため、ユーザー目線に立ってどのような実装を行ったら100%の性能を引き出せるかを重視したエンジニアになりたいです。
               </Text>
+            </Paragraph>
+
+            <Paragraph title="Skills">
+              <SkillDetail title="プログラミング言語">{skills.lang.join(" / ")}</SkillDetail>
+              <SkillDetail title="フレームワーク">{skills.framework.join(" / ")}</SkillDetail>
+              <SkillDetail title="インフラ環境">{skills.infra.join(" / ")}</SkillDetail>
+              <SkillDetail title="ツール">{skills.tool.join(" / ")}</SkillDetail>
             </Paragraph>
           </Box>
         </Box>
