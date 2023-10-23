@@ -1,4 +1,4 @@
-import { Box, Text, Heading } from "@chakra-ui/react";
+import { Box, Text, Heading, Flex } from "@chakra-ui/react";
 import Head from "next/head";
 import { Footer } from "../components/footer";
 import { Menu } from "../components/menu";
@@ -6,6 +6,7 @@ import { SkillDetail } from "../components/skillDetail";
 import { CanvaSlide } from "@/components/canvaSlide";
 import { IntroductionCard } from "@/components/introductionCard";
 import { Paragraph } from "@/components/paragraph";
+import { SNSBox } from "@/components/snsBox";
 import { skills } from "@/data";
 
 const About = () => {
@@ -20,27 +21,11 @@ const About = () => {
           <Heading as="h2" size="lg" textAlign="center" py="2rem">
             About
           </Heading>
-          <Box maxW="780px" mx="auto" py="2rem" px="1rem">
-            <CanvaSlide />
-            <Box m="1rem">
-              Link:{" "}
-              <a
-                href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFlMuGeCWA&#x2F;view?utm_content=DAFlMuGeCWA&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
-                target="_blank"
-                rel="noopener"
-                style={{
-                  textDecoration: "underline",
-                }}
-              >
-                yudai04 | Self-Introduction
-              </a>
-            </Box>
+          <Box py="2rem" w="100%">
+            <IntroductionCard />
           </Box>
-          <Box maxW="780px" mx="auto" py="2rem">
+          <Box maxW="780px" mx="auto" pb="2rem">
             <Paragraph title="About Me">
-              <Box py="1rem" w="100%">
-                <IntroductionCard />
-              </Box>
               <Text>
                 芝浦工業大学情報工学科に所属する大学3年生です。プログラミングやデザインを通した「ものづくり」に興味があり活動しています。
               </Text>
@@ -56,6 +41,25 @@ const About = () => {
                 インターンシップでは、Reactやrailsなどを使ったWeb開発と、Unityを使ったアプリケーション開発を行っています。
               </Text>
             </Paragraph>
+            <Box maxW="780px" mx="auto" py="2rem" px="1rem">
+              <CanvaSlide />
+              <Box m="1rem">
+                Link:{" "}
+                <a
+                  href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFlMuGeCWA&#x2F;view?utm_content=DAFlMuGeCWA&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+                  target="_blank"
+                  rel="noopener"
+                  style={{
+                    textDecoration: "underline",
+                  }}
+                >
+                  yudai04 | Self-Introduction
+                </a>
+              </Box>
+              <Flex my="1rem" mx="0" p="0" justify="center" align="center" display={{ base: "none", md: "flex" }}>
+                <SNSBox boxShadow="md" gap="1rem" />
+              </Flex>
+            </Box>
             <Paragraph title="Vision">
               <Text>ユーザーにとってより良い製品を作れるエンジニアになりたいと考えています。</Text>
               <Text>具体的には、UI/UXなどを通じてプロダクトへの体験をより良いものにしたいと考えています。</Text>

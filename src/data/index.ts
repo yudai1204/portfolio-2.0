@@ -47,4 +47,5 @@ export const skills = {
   ],
 };
 
+export { contacts } from "./contacts";
 export { works } from "./works";

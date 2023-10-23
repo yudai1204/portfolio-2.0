@@ -1,4 +1,4 @@
-import { Box, Grid, Heading } from "@chakra-ui/react";
+import { Box, Container, Grid, Heading } from "@chakra-ui/react";
 import Head from "next/head";
 import { Footer } from "../components/footer";
 import { Menu } from "../components/menu";
@@ -16,15 +16,17 @@ const Works = () => {
         <Heading as="h2" size="lg" textAlign="center" py="2rem">
           Works
         </Heading>
-        <Grid
-          templateColumns={{ base: "repeat(1, 1fr)", sm: "repeat(2, 1fr)", xl: "repeat(3, 1fr)" }}
-          gap={6}
-          px={{ base: "2rem", md: "5rem" }}
-        >
-          {works.map((work) => (
-            <Work key={work.title} work={work} />
-          ))}
-        </Grid>
+        <Container maxW="1600px" mx="auto">
+          <Grid
+            templateColumns={{ base: "repeat(1, 1fr)", sm: "repeat(2, 1fr)", xl: "repeat(3, 1fr)" }}
+            gap={6}
+            px={{ base: "2rem", md: "5rem" }}
+          >
+            {works.map((work) => (
+              <Work key={work.title} work={work} />
+            ))}
+          </Grid>
+        </Container>
         <Footer />
       </Box>
     </>

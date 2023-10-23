@@ -41,7 +41,7 @@ const Home = () => {
             <Text>
               現在は大学で情報系を専攻しながら、インターンシップ、サークル、趣味などでフロントエンドを中心にデジタルアートやゲーム開発、電子工作などを行っています。
             </Text>
-            <Center w="100%">
+            <Center w="90%" mx="auto">
               <Button
                 onClick={() => {
                   router.push("/about");
