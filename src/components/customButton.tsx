@@ -22,6 +22,7 @@ export const CustomButton = (props: any) => {
         bg="linear-gradient(70deg, #f0800f, #f0ad0f)"
         transition=".3s"
         _hover={{ bg: "linear-gradient(70deg, #f0800f, #f0ad0f)", opacity: "0.2" }}
+        _active={{ bg: "linear-gradient(70deg, #f0800f, #f0ad0f)", opacity: "0" }}
       />
     </Box>
   );
