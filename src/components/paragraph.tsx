@@ -13,7 +13,7 @@ export const Paragraph = (props: Props) => {
       <Text fontSize="2xl" fontWeight="bold" mb=".8rem">
         {title}
       </Text>
-      <VStack gap=".8rem" align="flex-start">
+      <VStack gap=".8rem" align="flex-start" overflow="hidden">
         {children}
       </VStack>
     </Box>
