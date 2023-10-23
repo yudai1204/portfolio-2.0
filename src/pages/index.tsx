@@ -41,12 +41,12 @@ const Home = () => {
             <Text>
               現在は大学で情報系を専攻しながら、インターンシップ、サークル、趣味などでフロントエンドを中心にデジタルアートやゲーム開発、電子工作などを行っています。
             </Text>
-            <Center w="90%" mx="auto">
+            <Center w="100%">
               <Button
                 onClick={() => {
                   router.push("/about");
                 }}
-                mt=".5rem"
+                mt="1rem"
                 colorScheme="teal"
                 px="8rem"
               >
@@ -115,7 +115,7 @@ const Home = () => {
                 onClick={() => {
                   router.push("/works");
                 }}
-                mt=".5rem"
+                mt="1rem"
                 colorScheme="teal"
                 px="8rem"
               >

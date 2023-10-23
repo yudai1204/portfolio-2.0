@@ -19,6 +19,7 @@ export const CustomButton = (props: any) => {
       </Text>
       <Button
         {...props}
+        maxW={{ base: "280px", sm: "720px" }}
         m="0"
         bg="linear-gradient(70deg, #f0800f, #f0ad0f)"
         transition=".3s"

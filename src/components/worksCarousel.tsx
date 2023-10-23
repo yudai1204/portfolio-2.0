@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Pagination, Autoplay, EffectCards } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { works } from "../data";
+import { useIsSafari } from "../utils/useIsSafari";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,6 +12,7 @@ import "swiper/css/effect-cards";
 
 export const WorksCarousel = () => {
   const router = useRouter();
+  const isSafari = useIsSafari();
   return (
     <Box
       w="100%"
@@ -29,15 +31,19 @@ export const WorksCarousel = () => {
         speed={1000}
         autoplay={{
           delay: 3000,
+          disableOnInteraction: false,
         }}
         style={{
-          width: "100%",
+          width: isSafari ? "80%" : "100%",
         }}
       >
         {works.map((work) => (
           <>
             {work.imageUrls?.length && (
-              <SwiperSlide key={work.title} style={{ borderRadius: "1rem", boxShadow: "0 0 8px #6666" }}>
+              <SwiperSlide
+                key={work.title}
+                style={{ borderRadius: isSafari ? ".5rem" : "1rem", boxShadow: "0 0 8px #6666" }}
+              >
                 <Box
                   w="100%"
                   bgImage={`url(${work.imageUrls[0]})`}
@@ -59,7 +65,13 @@ export const WorksCarousel = () => {
                       justify="center"
                       align="center"
                     >
-                      <Text color="white" textAlign="center" fontSize="xl" fontWeight="600" pb="1rem">
+                      <Text
+                        color="white"
+                        textAlign="center"
+                        fontSize={{ base: "md", md: "xl" }}
+                        fontWeight="600"
+                        pb="1rem"
+                      >
                         {work.title} / {work.year}
                       </Text>
                     </Flex>
