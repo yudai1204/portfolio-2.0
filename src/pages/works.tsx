@@ -4,6 +4,7 @@ import { Footer } from "../components/footer";
 import { Menu } from "../components/menu";
 import { Work } from "../components/work";
 import { works } from "../data";
+import { DarkModeSwitch } from "@/components/darkModeSwitch";
 
 const Works = () => {
   return (
@@ -13,6 +14,7 @@ const Works = () => {
       </Head>
       <Box bgColor="#ffe8b611" minH="100vh" pt={{ base: "3rem", md: "5rem" }}>
         <Menu active="works" />
+        <DarkModeSwitch />
         <Heading as="h2" size="lg" textAlign="center" py="2rem">
           Works
         </Heading>

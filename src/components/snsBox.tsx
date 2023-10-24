@@ -1,4 +1,4 @@
-import { Icon, Text, Flex, Link, Box } from "@chakra-ui/react";
+import { Icon, Text, Flex, Link, Box, useColorModeValue } from "@chakra-ui/react";
 import { contacts } from "@/data";
 
 type Props = {
@@ -41,7 +41,7 @@ export const SNSBox = (props: Props) => {
             <Icon as={contact.icon} fontSize="1.4rem" />
             <Box>
               <Text fontWeight="600">{contact.genre}</Text>
-              {displayDetail && <Text color="gray.600">{contact.value}</Text>}
+              {displayDetail && <Text color={useColorModeValue("gray.600", "gray.300")}>{contact.value}</Text>}
             </Box>
           </Flex>
         </Link>
