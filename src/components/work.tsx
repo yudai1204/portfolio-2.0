@@ -217,12 +217,7 @@ export const Work = (props: Props) => {
                 </Badge>
               ))}
           </Flex>
-          <Box
-            pb=".5rem"
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          >
+          <Box pb=".5rem">
             {work.urls &&
               work.urls.map((item) => (
                 <Link
@@ -234,6 +229,9 @@ export const Work = (props: Props) => {
                   display="block"
                   _hover={{ bgColor: useCM("gray.100", "gray.600") }}
                   borderRadius="5px"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
                 >
                   <Text
                     textDecor="underline"

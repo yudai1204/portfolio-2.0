@@ -91,7 +91,13 @@ export const works: Work[] = [
     longDescription: (
       <>
         <Text>このポートフォリオサイトです。実は2代目で、以前のものとは分離して完全な作り直しを行いました。</Text>
-        <Text>以前のものはJS / vanilla Next.jsでしたが、2代目でTS / Chakra UIになりました</Text>
+        <Text>
+          以前のものはJS / vanilla Next.jsでしたが、2代目でTS / Chakra
+          UIになりました。前回よりUI/UXを見直し、より直感的でわかりやすいサイトを目指しています。
+        </Text>
+        <Text>
+          画面右下ボタンより、ライトモードとダークモードの切り替えができますが、基本的にはライトモードでの閲覧をお勧めします。
+        </Text>
       </>
     ),
     imageUrls: ["portfolio.jpg"],
