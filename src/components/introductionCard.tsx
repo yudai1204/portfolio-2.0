@@ -1,4 +1,4 @@
-import { Box, Text, Flex, VStack } from "@chakra-ui/react";
+import { Box, Text, Flex, VStack, useColorModeValue as useCM } from "@chakra-ui/react";
 import { css, keyframes } from "@emotion/react";
 import { IconImg } from "./iconImg";
 
@@ -13,14 +13,18 @@ const appear = keyframes`
 
 const IntroductionCardMain = () => (
   <Flex
-    bg="linear-gradient(70deg, #fffabc88, #e0ebaf99)"
+    bg={useCM("linear-gradient(70deg, #fffabc88, #e0ebaf99)", "linear-gradient(70deg, #dfdf7188, #a1c87399)")}
     w="100%"
     py="2rem"
     gap={2}
     justify="space-evenly"
     align="center"
   >
-    <IconImg size={{ base: "72px", sm: "96px", md: "128px" }} />
+    <IconImg
+      size={{ base: "72px", sm: "96px", md: "128px" }}
+      boxShadow={useCM(undefined, "0 0 4px #fffabcaa")}
+      borderColor={useCM(undefined, "0 0 4px #fff")}
+    />
     <VStack spacing={1.5} align="flex-start">
       <Text fontSize={{ base: "xl", sm: "2xl" }} fontWeight="300">
         yudai04 / yudai1204
@@ -47,7 +51,7 @@ export const IntroductionCard = () => {
       h="fit-content"
       maxW="720px"
       w="80%"
-      bg="#fffa"
+      bg={useCM("#fffa", "#777a")}
       borderRadius=".5rem"
       boxShadow="2px 2px 4px #fcd14644"
       css={css`

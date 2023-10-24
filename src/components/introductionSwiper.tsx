@@ -1,4 +1,4 @@
-import { Box, Image, Flex, Icon, Text } from "@chakra-ui/react";
+import { Box, Image, Flex, Icon, Text, useColorModeValue as useCM } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import { useMemo } from "react";
 import { SlArrowDown } from "react-icons/sl";
@@ -23,15 +23,16 @@ const scroll = keyframes`
 const swiperImages: string[] = ["nekocafe_filter.webp", "nasa_won.jpg", "w1.jpg", "DSC01409.JPG", "w2.jpg"];
 
 export const IntroductionSwiper = () => {
+  const bgColor = useCM("#fff", "#181818");
   const swiperItems = useMemo(() => {
     return [
       ...swiperImages.map((url) => (
-        <Box w="100%" h="100%" key={url} bg="white">
+        <Box w="100%" h="100%" key={url} bg={bgColor}>
           <Image src={url} w="100%" h="100%" objectFit="cover" alt="PortfolioImage" opacity={0.5} />
         </Box>
       )),
     ];
-  }, []);
+  }, [bgColor]);
 
   const svhSupport = useSvhSupport();
 

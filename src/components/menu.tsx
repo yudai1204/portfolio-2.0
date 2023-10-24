@@ -13,6 +13,7 @@ import {
   Divider,
   DrawerBody,
   DrawerCloseButton,
+  useColorModeValue as useCM,
 } from "@chakra-ui/react";
 import { useEffect, useState, useRef } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -67,9 +68,9 @@ const MenuWide = (props: Props) => {
           w="90%"
           maxW="640px"
           h="100%"
-          bg="#f4f4f49f"
+          bg={useCM("#f4f4f49f", "#0b0b1b9f")}
+          boxShadow={`0 0 10px ${useCM("#8884", "#0006")}`}
           backdropFilter="blur(3px)"
-          boxShadow="0 0 10px #8884"
           borderRadius="xl"
           justify="space-around"
           align="center"
@@ -91,7 +92,7 @@ const MenuWide = (props: Props) => {
                 align="center"
                 h="100%"
                 transition="0.3s"
-                _hover={{ bgColor: "#fff9" }}
+                _hover={{ bgColor: useCM("#fff9", "#3339") }}
                 gap={1.5}
               >
                 <Icon as={link.icon} fontSize="lg" />
@@ -122,15 +123,15 @@ const MenuNarrow = (props: Props) => {
         justify="left"
         align="center"
         zIndex="1000"
-        bg="#fffa"
+        bg={useCM("#fffa", "#0b0b1b9f")}
         backdropFilter="blur(3px)"
-        boxShadow="0 0 10px #ddda"
+        boxShadow={`0 0 10px ${useCM("#ddda", "#0006")}`}
         userSelect="none"
       >
         <Icon
           as={AiOutlineMenu}
           fontSize="2.4rem"
-          color="gray.700"
+          color={useCM("gray.700", "gray.300")}
           opacity="0.8"
           cursor="pointer"
           onClick={onMenuOpen}
@@ -153,12 +154,25 @@ const MenuNarrow = (props: Props) => {
         <DrawerContent>
           <DrawerBody w="100%" p={0}>
             <Box p="8px">
-              <Icon as={AiOutlineClose} fontSize="2.4rem" color="gray.700" cursor="pointer" onClick={onMenuClose} />
+              <Icon
+                as={AiOutlineClose}
+                fontSize="2.4rem"
+                color={useCM("gray.700", "gray.500")}
+                cursor="pointer"
+                onClick={onMenuClose}
+              />
             </Box>
             <DrawerCloseButton opacity="0" ref={closeRef} position="absolute" top="0" left="0" />
             <VStack>
               <Box>
-                <Link href="/" _hover={{ opacity: 1 }} role="group" w="100%" h="100%">
+                <Link
+                  href="/"
+                  _hover={useCM({ opacity: 1 }, { opacity: 0.8 })}
+                  transition=".3s"
+                  role="group"
+                  w="100%"
+                  h="100%"
+                >
                   <Flex
                     align="center"
                     justify="center"
@@ -167,11 +181,14 @@ const MenuNarrow = (props: Props) => {
                     py="16px"
                     borderRadius="2xl"
                     gap={5}
-                    boxShadow="1px 1px 4px #9903"
+                    boxShadow={`1px 1px 4px ${useCM("#9903", "#0009")}`}
                     w="fit-content"
                     transition=".3s"
-                    bg="linear-gradient(70deg, #fffabc33, #e0ebaf33)"
-                    _groupHover={{ bg: "linear-gradient(70deg, #fffabc55, #e0ebaf55)", boxShadow: "1px 2px 4px #9904" }}
+                    bg={useCM("linear-gradient(70deg, #fffabc33, #e0ebaf33)", "#62697699")}
+                    _groupHover={useCM(
+                      { bg: "linear-gradient(70deg, #fffabc55, #e0ebaf55)", boxShadow: "1px 2px 4px #9904" },
+                      {},
+                    )}
                   >
                     <IconImg size="48px" />
                     <Box>
@@ -201,7 +218,7 @@ const MenuNarrow = (props: Props) => {
                         align="center"
                         h="45px"
                         transition="0.3s"
-                        _hover={{ bgColor: "#eee" }}
+                        _hover={{ bgColor: useCM("#eee", "#44546e") }}
                         gap={5}
                       >
                         <Icon as={link.icon} fontSize="2xl" />
@@ -218,7 +235,7 @@ const MenuNarrow = (props: Props) => {
           </DrawerBody>
           <DrawerFooter>
             <Text fontSize="sm" color="gray.500" textAlign="center" w="100%">
-              @2023 yudai04.dev
+              © 2023 yudai04.dev
             </Text>
           </DrawerFooter>
         </DrawerContent>

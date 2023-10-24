@@ -19,6 +19,7 @@ import {
   ModalBody,
   ModalOverlay,
   ModalCloseButton,
+  useColorModeValue as useCM,
 } from "@chakra-ui/react";
 import { useMemo } from "react";
 import { BsGithub } from "react-icons/bs";
@@ -55,7 +56,7 @@ export const WorkModal = (props: ModalProps) => {
             {work.tags && (
               <Flex gap={1} wrap="wrap" py="1rem">
                 {work.tags.map((tag) => (
-                  <Badge key={tag} fontSize="sm" color="gray.600">
+                  <Badge key={tag} fontSize="sm" color={useCM("gray.600", "gray.400")}>
                     {tag}
                   </Badge>
                 ))}
@@ -93,12 +94,12 @@ export const WorkModal = (props: ModalProps) => {
                       w="fit-content"
                       display="block"
                       borderRadius="5px"
-                      _hover={{ bgColor: "gray.100" }}
+                      _hover={{ bgColor: useCM("gray.100", "gray.600") }}
                     >
                       <Text
                         textDecor="underline"
                         fontSize="90%"
-                        color="gray.600"
+                        color={useCM("gray.600", "gray.400")}
                         w="fit-content"
                         display="block"
                         py="3px"
@@ -167,7 +168,10 @@ export const Work = (props: Props) => {
       variant="outline"
       position="relative"
       transition="0.3s"
-      _hover={{ bgColor: "#fafafa", boxShadow: "2px 2px 4px #6662" }}
+      _hover={useCM(
+        { bgColor: "#fafafa", boxShadow: "2px 2px 4px #6662" },
+        { bgColor: "#303b5233", boxShadow: "2px 2px 4px #3342" },
+      )}
       role="group"
     >
       <Box w="100%">
@@ -187,8 +191,13 @@ export const Work = (props: Props) => {
           style={{ width: "100%", boxShadow: "0 0 6px #6663" }}
         >
           {imageNodes.map((node, idx) => (
-            <SwiperSlide key={idx}>
-              <Box transition="0.5s" _groupHover={{ transform: "scale(1.03)" }} onClick={onOpen}>
+            <SwiperSlide key={idx} style={{ backgroundColor: "#000" }}>
+              <Box
+                transition="0.5s"
+                _groupHover={{ transform: "scale(1.03)" }}
+                onClick={onOpen}
+                opacity={useCM(1, 0.7)}
+              >
                 {node}
               </Box>
             </SwiperSlide>
@@ -203,7 +212,7 @@ export const Work = (props: Props) => {
           <Flex gap={1} wrap="wrap" py="1rem">
             {work.tags &&
               work.tags.map((tag) => (
-                <Badge key={tag} fontSize="sm" color="gray.600">
+                <Badge key={tag} fontSize="sm" color={useCM("gray.600", "gray.400")}>
                   {tag}
                 </Badge>
               ))}
@@ -223,13 +232,13 @@ export const Work = (props: Props) => {
                   isExternal
                   w="fit-content"
                   display="block"
-                  _hover={{ bgColor: "gray.200" }}
+                  _hover={{ bgColor: useCM("gray.100", "gray.600") }}
                   borderRadius="5px"
                 >
                   <Text
                     textDecor="underline"
                     fontSize="90%"
-                    color="gray.600"
+                    color={useCM("gray.600", "gray.400")}
                     w="fit-content"
                     display="block"
                     px="5px"
