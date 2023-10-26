@@ -2,7 +2,6 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 import Head from "next/head";
 import { Footer } from "../components/footer";
 import { Menu } from "../components/menu";
-import { DarkModeSwitch } from "@/components/darkModeSwitch";
 import { SNSBox } from "@/components/snsBox";
 
 const Contact = () => {
@@ -13,7 +12,6 @@ const Contact = () => {
       </Head>
       <Box bgColor="#ffe8b611" minH="100vh" position="relative">
         <Menu active="contact" />
-        <DarkModeSwitch />
         <Box maxW="780px" p="1rem" pt={{ base: "3rem", md: "5rem" }} mx="auto" pb="120px">
           <Heading as="h2" size="lg" textAlign="center" py="2rem">
             Contact
