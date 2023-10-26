@@ -4,7 +4,6 @@ import { Footer } from "../components/footer";
 import { Menu } from "../components/menu";
 import { SkillDetail } from "../components/skillDetail";
 import { CanvaSlide } from "@/components/canvaSlide";
-import { DarkModeSwitch } from "@/components/darkModeSwitch";
 import { IntroductionCard } from "@/components/introductionCard";
 import { Paragraph } from "@/components/paragraph";
 import { SNSBox } from "@/components/snsBox";
@@ -18,7 +17,6 @@ const About = () => {
       </Head>
       <Box bgColor="#ffe8b611" minH="100vh">
         <Menu active="about" />
-        <DarkModeSwitch />
         <Box zIndex={0} pt={{ base: "3rem", md: "5rem" }}>
           <Heading as="h2" size="lg" textAlign="center" py="2rem">
             About

@@ -1,16 +1,31 @@
-import { useColorMode, IconButton, Box } from "@chakra-ui/react";
+import { useColorMode, IconButton, Button, Box, Icon, Text } from "@chakra-ui/react";
 import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
 
-export const DarkModeSwitch = () => {
+type Props = {
+  details?: boolean;
+};
+export const DarkModeSwitch = (props: Props) => {
+  const { details } = props;
   const { colorMode, toggleColorMode } = useColorMode();
+  const isDark = colorMode === "dark";
+  if (details) {
+    return (
+      <Button onClick={toggleColorMode} variant="outline" size="sm">
+        <Icon as={isDark ? MdOutlineLightMode : MdOutlineDarkMode} mr="0.3rem" />
+        <Text fontWeight="500" fontSize="xs">
+          Switch to {isDark ? "light" : "dark"} mode
+        </Text>
+      </Button>
+    );
+  }
   return (
-    <Box position="fixed" bottom={0} right={0} m=".8rem" w="fit-content" h="fit-content" zIndex={10000000}>
+    <Box>
       <IconButton
         fontSize="2xl"
         p="1rem"
-        bg={colorMode === "dark" ? "#9996" : "#f4e4c466"}
+        bg={isDark ? "#9996" : "#f4e4c466"}
         aria-label="Toggle dark mode"
-        icon={colorMode === "dark" ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
+        icon={isDark ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
         onClick={toggleColorMode}
       />
     </Box>

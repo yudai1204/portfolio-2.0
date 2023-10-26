@@ -10,7 +10,6 @@ import { Paragraph } from "../components/paragraph";
 import { SkillDetail } from "../components/skillDetail";
 import { affiliations, awards, skills } from "../data";
 import { CustomButton as Button } from "@/components/customButton";
-import { DarkModeSwitch } from "@/components/darkModeSwitch";
 import { WorksCarousel } from "@/components/worksCarousel";
 
 const Home = () => {
@@ -29,7 +28,6 @@ const Home = () => {
       </Head>
       <Box bgColor="#ffe8b611" minH="100vh">
         <Menu active="home" />
-        <DarkModeSwitch />
         <Box zIndex={0} mb="2rem">
           <IntroductionSwiper />
         </Box>

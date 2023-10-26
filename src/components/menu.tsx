@@ -19,6 +19,7 @@ import { useEffect, useState, useRef } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { GoHome, GoFileDirectory, GoPerson, GoBook } from "react-icons/go";
 import { IconImg } from "./iconImg";
+import { DarkModeSwitch } from "@/components/darkModeSwitch";
 import { useWideHeader } from "@/utils/useWideHeader";
 
 const links = [
@@ -231,6 +232,9 @@ const MenuNarrow = (props: Props) => {
                   </>
                 ))}
               </VStack>
+              <Box mt="1rem">
+                <DarkModeSwitch details />
+              </Box>
             </VStack>
           </DrawerBody>
           <DrawerFooter>
@@ -252,5 +256,28 @@ export const Menu = (props: Props) => {
     setIsLoaded(true);
   }, []);
 
-  return <>{isLoaded && (wideHeader ? <MenuWide active={active} /> : <MenuNarrow active={active} />)}</>;
+  return (
+    <>
+      {isLoaded &&
+        (wideHeader ? (
+          <>
+            <Box
+              position="fixed"
+              bottom={0}
+              right={0}
+              m=".8rem"
+              w="fit-content"
+              h="fit-content"
+              zIndex={10000000}
+              display={{ base: "none", md: "block" }}
+            >
+              <DarkModeSwitch />
+            </Box>
+            <MenuWide active={active} />
+          </>
+        ) : (
+          <MenuNarrow active={active} />
+        ))}
+    </>
+  );
 };
