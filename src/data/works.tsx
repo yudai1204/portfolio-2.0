@@ -116,6 +116,30 @@ export const works: Work[] = [
   },
 
   {
+    title: "Open in Fork Button",
+    year: "2023",
+    shortDescription: "VSCodeでGitクライアントであるForkを開くボタンを追加する拡張機能です。",
+    longDescription: (
+      <>
+        VSCode向けの拡張機能で、私の愛用するGitクライアントである
+        <a href="https://git-fork.com/" target="_blank">
+          Fork
+        </a>
+        をボタンひとつで開けるようにするものです。 該当のレポジトリを直接開くことができます。
+      </>
+    ),
+    imageUrls: ["fork.png"],
+    githubUrl: "https://github.com/yudai1204/open-in-fork-button",
+    urls: [
+      {
+        name: "VSCode Marketplace",
+        url: "https://marketplace.visualstudio.com/items?itemName=yudai1204.open-in-fork-button",
+      },
+    ],
+    tags: ["TypeScript", "VSCode拡張機能", "個人開発"],
+  },
+
+  {
     title: "GoogleDrive Uploder(仮)",
     year: "2022",
     shortDescription:

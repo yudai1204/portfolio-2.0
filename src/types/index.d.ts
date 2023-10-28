@@ -37,6 +37,7 @@ export type Tag =
   | "Linux"
   | "Chakra UI"
   | "インタラクティブアート"
+  | "VSCode拡張機能"
   | "Three.js";
 
 export type Work = {
