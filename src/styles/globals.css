@@ -79,8 +79,8 @@ a {
 :root {
   --swiper-theme-color: #fffa !important;
 }
-.swiper-button-prev:after,
-.swiper-button-next:after,
+.swiper-button-prev::after,
+.swiper-button-next::after,
 .swiper-pagination-bullet {
   filter: drop-shadow(2px 2px 3px #666) !important;
 }

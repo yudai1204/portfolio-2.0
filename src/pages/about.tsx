@@ -1,5 +1,6 @@
 import { Box, Text, Heading, Flex } from "@chakra-ui/react";
 import Head from "next/head";
+import { useMemo } from "react";
 import { Footer } from "../components/footer";
 import { Menu } from "../components/menu";
 import { SkillDetail } from "../components/skillDetail";
@@ -10,6 +11,16 @@ import { SNSBox } from "@/components/snsBox";
 import { skills } from "@/data";
 
 const About = () => {
+  const myOld = useMemo(() => {
+    const birth = new Date(2001, 12, 4);
+    const now = new Date();
+    const diff = now.getTime() - birth.getTime();
+    const diffDate = new Date(diff);
+    const age = diffDate.getUTCFullYear() - 1970;
+    const month = diffDate.getUTCMonth();
+    return `${age}歳${month}ヶ月`;
+  }, []);
+
   return (
     <>
       <Head>
@@ -40,6 +51,9 @@ const About = () => {
               <Text>
                 インターンシップでは、Reactやrailsなどを使ったWeb開発と、Unityを使ったアプリケーション開発を行っています。
               </Text>
+              <Box>
+                <Text>現在の年齢: {myOld} (自分用)</Text>
+              </Box>
             </Paragraph>
             <Box maxW="780px" mx="auto" py="2rem" px="1rem">
               <CanvaSlide />
