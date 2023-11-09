@@ -197,6 +197,7 @@ export const Work = (props: Props) => {
                 _groupHover={{ transform: "scale(1.03)" }}
                 onClick={onOpen}
                 opacity={useCM(1, 0.7)}
+                cursor="pointer"
               >
                 {node}
               </Box>
