@@ -140,6 +140,34 @@ export const works: Work[] = [
   },
 
   {
+    title: "クソリプジェネレータ",
+    year: "2023",
+    shortDescription:
+      "ChatGPTにリプライを考えてもらおう！Chat GPTの非公式APIを使い、Twitterのリプライを生成する拡張機能を作成しました。",
+    longDescription: (
+      <>
+        <Text>
+          ChatGPTにリプライを考えてもらおう！
+        </Text>
+        <Text>Chat GPTの非公式APIを使い、Twitterのリプライを生成する拡張機能を作成しました。</Text>
+        <Text>APIの使用料等は不要で、OpenAIのChatGPTサービスにログイン済みであれば使用できます。</Text>
+        <Text>標準ではいわゆる「クソリプ」を生成することができます。</Text>
+        <Text>設定画面から各ボタンの表示名とプロンプトを変更可能なため、クソリプによらず様々なリプライを生成することができます。</Text>
+      </>
+    ),
+    imageUrls: ["kusogen1.webp", "kusogen2.webp"],
+    videoUrls: ["HujQvTFiCAM"],
+    githubUrl: "https://github.com/yudai1204/kuso-replay-generator",
+    urls: [
+      {
+        name: "Chromeウェブストア",
+        url: "https://chromewebstore.google.com/detail/%E3%82%AF%E3%82%BD%E3%83%AA%E3%83%97%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF/igafhgbpjahkdnneohlmmikmaedmlaha?hl=ja",
+      },
+    ],
+    tags: ["個人開発", "Chrome拡張機能", "JavaScript"],
+  },
+
+  {
     title: "GoogleDrive Uploder(仮)",
     year: "2022",
     shortDescription:
