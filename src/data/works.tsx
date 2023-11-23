@@ -140,19 +140,44 @@ export const works: Work[] = [
   },
 
   {
+    title: "Amazon Sakura Checker Viewer",
+    year: "2023",
+    shortDescription: "Amazonの商品一覧画面にサクラチェッカーの結果を表示します。",
+    longDescription: (
+      <>
+        <Text>
+          Amazonの商品一覧画面にサクラチェッカーの結果を表示します。また、類似サービスであるReviewMetaの結果も表示します。
+        </Text>
+        <Text>
+          クリックなしに結果を表示するため、Amazonの商品詳細を見ながらサクラチェッカーの結果を確認することができます。
+        </Text>
+      </>
+    ),
+    imageUrls: ["sakurachecker.jpg"],
+    githubUrl: "https://github.com/yudai1204/sakura-checker-viewer",
+    urls: [
+      {
+        name: "Chromeウェブストア",
+        url: "https://chromewebstore.google.com/detail/amazon-sakura-checker-vie/mmadhiofkjibiodihnmicliiipgiofha?hl=ja",
+      },
+    ],
+    tags: ["個人開発", "Chrome拡張機能", "JavaScript"],
+  },
+
+  {
     title: "クソリプジェネレータ",
     year: "2023",
     shortDescription:
       "ChatGPTにリプライを考えてもらおう！Chat GPTの非公式APIを使い、Twitterのリプライを生成する拡張機能を作成しました。",
     longDescription: (
       <>
-        <Text>
-          ChatGPTにリプライを考えてもらおう！
-        </Text>
+        <Text>ChatGPTにリプライを考えてもらおう！</Text>
         <Text>Chat GPTの非公式APIを使い、Twitterのリプライを生成する拡張機能を作成しました。</Text>
         <Text>APIの使用料等は不要で、OpenAIのChatGPTサービスにログイン済みであれば使用できます。</Text>
         <Text>標準ではいわゆる「クソリプ」を生成することができます。</Text>
-        <Text>設定画面から各ボタンの表示名とプロンプトを変更可能なため、クソリプによらず様々なリプライを生成することができます。</Text>
+        <Text>
+          設定画面から各ボタンの表示名とプロンプトを変更可能なため、クソリプによらず様々なリプライを生成することができます。
+        </Text>
       </>
     ),
     imageUrls: ["kusogen1.webp", "kusogen2.webp"],
