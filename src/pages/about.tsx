@@ -12,7 +12,7 @@ import { skills } from "@/data";
 
 const About = () => {
   const myOld = useMemo(() => {
-    const birth = new Date(2001, 12, 4);
+    const birth = new Date(2001, 12-1, 4);
     const now = new Date();
     const diff = now.getTime() - birth.getTime();
     const diffDate = new Date(diff);

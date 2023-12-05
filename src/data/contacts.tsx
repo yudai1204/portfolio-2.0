@@ -1,7 +1,7 @@
 import { BsGithub, BsVoicemail } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
-import { SiWantedly } from "react-icons/si";
+import { SiWantedly, SiQiita } from "react-icons/si";
 
 export const contacts = [
   {
@@ -32,5 +32,11 @@ export const contacts = [
     value: "@yu0404",
     url: "https://crowdworks.jp/public/employees/4780926",
     icon: BsVoicemail,
+  },
+  {
+    genre: "Qiita",
+    value: "@yudai1204",
+    url: "https://qiita.com/yudai1204",
+    icon: SiQiita
   },
 ];
