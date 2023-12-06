@@ -165,6 +165,33 @@ export const works: Work[] = [
   },
 
   {
+    title: "YouTube ASCII ART Maker",
+    year: "2023",
+    shortDescription: "YouTubeの字幕機能を使ってアスキーアートを色付きで生成するpythonスクリプトです。",
+    longDescription: (
+      <>
+        <Text>
+          YouTubeには字幕機能があり、私の
+          <Link href="https://qiita.com/yudai1204/items/898c368af8832443a874" isExternal>
+            過去に執筆した記事
+          </Link>
+          でも解説させていただいたことがありますが非常に高いカスタマイズ性があります。
+        </Text>
+        <Text>このスクリプトは、画像から色付きのアスキーアートをYouTubeの字幕として生成するpythonスクリプトです。</Text>
+      </>
+    ),
+    imageUrls: ["youtube_aa.jpg"],
+    githubUrl: "https://github.com/yudai1204/youtube-ascii-art-maker",
+    urls: [
+      {
+        name: "Qiita記事 - これであなたもコメ職人！YouTubeの字幕機能でアスキーアート",
+        url: "https://qiita.com/yudai1204/private/7e8f2f9db94ba8edd9b2",
+      },
+    ],
+    tags: ["個人開発", "Python"],
+  },
+
+  {
     title: "クソリプジェネレータ",
     year: "2023",
     shortDescription:
