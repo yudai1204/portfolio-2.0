@@ -185,7 +185,7 @@ export const works: Work[] = [
     urls: [
       {
         name: "Qiita記事 - これであなたもコメ職人！YouTubeの字幕機能でアスキーアート",
-        url: "https://qiita.com/yudai1204/private/7e8f2f9db94ba8edd9b2",
+        url: "https://qiita.com/yudai1204/items/7e8f2f9db94ba8edd9b2",
       },
     ],
     tags: ["個人開発", "Python"],
