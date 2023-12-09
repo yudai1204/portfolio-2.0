@@ -14,7 +14,7 @@ import {
   DrawerCloseButton,
   useColorModeValue as useCM,
 } from "@chakra-ui/react";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { GoHome, GoFileDirectory, GoPerson, GoBook } from "react-icons/go";
 import { IconImg } from "./iconImg";
@@ -245,28 +245,33 @@ const MenuNarrow = (props: Props) => {
 export const Menu = (props: Props) => {
   const { active } = props;
   const wideHeader = useWideHeader();
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
     <>
-      {wideHeader ? (
-        <>
-          <Box
-            position="fixed"
-            bottom={0}
-            right={0}
-            m=".8rem"
-            w="fit-content"
-            h="fit-content"
-            zIndex={10000000}
-            display={{ base: "none", md: "block" }}
-          >
-            <DarkModeSwitch />
-          </Box>
-          <MenuWide active={active} />
-        </>
-      ) : (
-        <MenuNarrow active={active} />
-      )}
+      {isLoaded &&
+        (wideHeader ? (
+          <>
+            <Box
+              position="fixed"
+              bottom={0}
+              right={0}
+              m=".8rem"
+              w="fit-content"
+              h="fit-content"
+              zIndex={10000000}
+              display={{ base: "none", md: "block" }}
+            >
+              <DarkModeSwitch />
+            </Box>
+            <MenuWide active={active} />
+          </>
+        ) : (
+          <MenuNarrow active={active} />
+        ))}
     </>
   );
 };
