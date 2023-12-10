@@ -127,7 +127,7 @@ const Home = () => {
           <Divider maxW="820px" mx="auto" borderColor="#ccc" />
 
           <Paragraph title="Skills">
-            <SkillDetail title="プログラミング言語">{skills.lang.join(" / ")}</SkillDetail>
+            <SkillDetail title="プログラミング言語">{skills.lang.map((x) => x.name).join(" / ")}</SkillDetail>
             <SkillDetail title="フレームワーク">{skills.framework.join(" / ")}</SkillDetail>
             <SkillDetail title="インフラ環境">{skills.infra.join(" / ")}</SkillDetail>
             <SkillDetail title="ツール">{skills.tool.join(" / ")}</SkillDetail>

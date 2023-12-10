@@ -12,7 +12,7 @@ import { skills } from "@/data";
 
 const About = () => {
   const myOld = useMemo(() => {
-    const birth = new Date(2001, 12-1, 4);
+    const birth = new Date(2001, 12 - 1, 4);
     const now = new Date();
     const diff = now.getTime() - birth.getTime();
     const diffDate = new Date(diff);
@@ -84,7 +84,7 @@ const About = () => {
             </Paragraph>
 
             <Paragraph title="Skills">
-              <SkillDetail title="プログラミング言語">{skills.lang.join(" / ")}</SkillDetail>
+              <SkillDetail title="プログラミング言語">{skills.lang.map((x) => x.name).join(" / ")}</SkillDetail>
               <SkillDetail title="フレームワーク">{skills.framework.join(" / ")}</SkillDetail>
               <SkillDetail title="インフラ環境">{skills.infra.join(" / ")}</SkillDetail>
               <SkillDetail title="ツール">{skills.tool.join(" / ")}</SkillDetail>
