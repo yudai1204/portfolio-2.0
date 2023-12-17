@@ -124,10 +124,10 @@ type TimelineProps = {
 const TimelineWide = (props: TimelineProps) => {
   const { filteredEvents } = props;
   return (
-    <Grid templateColumns="repeat(9, 1fr)" rowGap="2rem" pos="relative" pb="1rem">
-      <Box pos="absolute" top="5px" left="50%" transform="translateX(-50%)" w="4px" h="calc(100% - 5px)" zIndex={0}>
-        <Box w="100%" h="95%" css={bgGradient} />
-        <Box w="100%" h="5%" bg="linear-gradient(0deg, rgba(255, 240, 54, 0) 0%, rgba(255, 240, 54, 1) 100%);" />
+    <Grid templateColumns="repeat(9, 1fr)" rowGap="2rem" pos="relative" pt="45px" pb="6rem">
+      <Box pos="absolute" top="50px" left="50%" transform="translateX(-50%)" w="4px" h="calc(100% - 50px)" zIndex={0}>
+        <Box w="100%" h="calc(100% - 100px)" css={bgGradient} />
+        <Box w="100%" h="100px" bg="linear-gradient(0deg, rgba(255, 240, 54, 0) 0%, rgba(255, 240, 54, 1) 100%);" />
       </Box>
       {filteredEvents.map((event) => (
         <>
@@ -175,6 +175,9 @@ export const History = (props: Props) => {
 
   const filteredEvents = useMemo(() => {
     if (rightonly) {
+      if (leftonly) {
+        return [];
+      }
       return events.filter((event) => event.side === "right");
     } else if (leftonly) {
       return events.filter((event) => event.side === "left");

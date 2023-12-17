@@ -187,6 +187,14 @@ export const events: Event[] = [
   },
   {
     side: "right",
+    year: "2023/10",
+    title: "株式会社ウサギィ",
+    supplement: "開発アルバイト",
+    href: "https://usagee.co.jp/",
+    icon: "usagee-logo.jpg",
+  },
+  {
+    side: "right",
     year: "2023/10 ~ 2023/11",
     title: "株式会社ファーストリテイリング",
     supplement: "インターンシップ (1month)",
@@ -209,5 +217,20 @@ export const events: Event[] = [
     supplement: "開発",
     content: "Amazonでサクラチェッカーを直接表示してくれる拡張機能",
     workId: "amazon-sakura-checker-viewer",
+  },
+  {
+    side: "right",
+    year: "2023/12 ~ 現在",
+    title: "芝浦工業大学 真鍋研究室",
+    href: "http://pai.ise.shibaura-it.ac.jp/",
+  },
+  {
+    side: "right",
+    year: "2024/2",
+    title: "ソニー・インタラクティブエンタテインメント",
+    supplement: "インターンシップ (3weeks)",
+    content: "PlayStation5のシステムソフトウェア開発",
+    href: "https://sonyinteractive.com/jp/",
+    icon: "/sony-logo.png",
   },
 ];

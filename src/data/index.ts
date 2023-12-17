@@ -9,6 +9,7 @@ export const affiliations = [
 ];
 
 export const awards = [
+  "第30回仙台知能ロボットコンテスト 最優秀技術賞",
   "NASA Space Apps Challenge 2023 横浜大会 最優秀賞",
   "NASA Space Apps Challenge 2023 世界大会 出場",
 ];

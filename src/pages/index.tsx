@@ -1,6 +1,7 @@
-import { Box, Center, Text, Divider, Link, Icon } from "@chakra-ui/react";
+import { Box, Center, Text, Divider, Link, Icon, CheckboxGroup, HStack, Checkbox } from "@chakra-ui/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { GoFileDirectory } from "react-icons/go";
 import { LuWrench } from "react-icons/lu";
@@ -19,6 +20,24 @@ import { WorksCarousel } from "@/components/worksCarousel";
 
 const Home = () => {
   const router = useRouter();
+  const [leftOnly, setLeftOnly] = useState(false);
+  const [rightOnly, setRightOnly] = useState(false);
+
+  const onChangeHistoryCheckbox = (values: string[]) => {
+    if (values.length === 2) {
+      setLeftOnly(true);
+      setRightOnly(true);
+    } else if (values.length === 0) {
+      setLeftOnly(false);
+      setRightOnly(false);
+    } else if (values[0] === "left") {
+      setLeftOnly(true);
+      setRightOnly(false);
+    } else {
+      setLeftOnly(false);
+      setRightOnly(true);
+    }
+  };
   return (
     <>
       <Head>
@@ -132,7 +151,18 @@ const Home = () => {
           <Divider maxW="820px" mx="auto" borderColor="#ccc" />
 
           <Paragraph title="History" icon={RiChatHistoryLine}>
-            <History rightonly />
+            <CheckboxGroup
+              defaultValue={["left", "right"]}
+              colorScheme="teal"
+              size="lg"
+              onChange={onChangeHistoryCheckbox}
+            >
+              <HStack spacing="24px">
+                <Checkbox value="left">制作物・受賞</Checkbox>
+                <Checkbox value="right">所属</Checkbox>
+              </HStack>
+            </CheckboxGroup>
+            <History rightonly={rightOnly} leftonly={leftOnly} />
             <Center w="100%">
               <Button
                 onClick={() => {
