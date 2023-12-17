@@ -1,7 +1,7 @@
-import { Box, Heading, Text, Image, Button } from "@chakra-ui/react";
+import { Box, Heading, Text, Image, Button, Spinner } from "@chakra-ui/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useMemo } from "react";
+import { useMemo, useEffect, useState } from "react";
 import { Footer } from "../../components/footer";
 import { Menu } from "../../components/menu";
 import { works } from "../../data";
@@ -12,20 +12,11 @@ const Work = () => {
   const router = useRouter();
   const { id } = router.query;
   const work = works.find((work) => work.id === id);
-  if (!work) {
-    return (
-      <Box bgColor="#ffe8b611" minH="100vh" pt={{ base: "3rem", md: "5rem" }} textAlign="center">
-        <Heading as="h2" size="lg" py="2rem">
-          404 Not Found
-        </Heading>
-        <Text>指定されたページは存在しません。</Text>
 
-        <Link href="/works" textDecor="underline">
-          <Text>Works一覧へ</Text>
-        </Link>
-      </Box>
-    );
-  }
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 1000);
+  }, []);
 
   const imageNodes = useMemo(
     () => [
@@ -45,6 +36,28 @@ const Work = () => {
     ],
     [work],
   );
+
+  if (!work) {
+    if (isLoading) {
+      return (
+        <Box bgColor="#ffe8b611" minH="100vh" pt={{ base: "3rem", md: "5rem" }} textAlign="center">
+          <Spinner size="xl" />
+        </Box>
+      );
+    }
+    return (
+      <Box bgColor="#ffe8b611" minH="100vh" pt={{ base: "3rem", md: "5rem" }} textAlign="center">
+        <Heading as="h2" size="lg" py="2rem">
+          404 Not Found
+        </Heading>
+        <Text>指定されたページは存在しません。</Text>
+
+        <Link href="/works" textDecor="underline">
+          <Text>Works一覧へ</Text>
+        </Link>
+      </Box>
+    );
+  }
 
   return (
     <>
