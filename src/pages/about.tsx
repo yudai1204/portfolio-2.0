@@ -8,6 +8,7 @@ import { Footer } from "../components/footer";
 import { Menu } from "../components/menu";
 import { SkillDetail } from "../components/skillDetail";
 import { CanvaSlide } from "@/components/canvaSlide";
+import { History } from "@/components/history";
 import { IntroductionCard } from "@/components/introductionCard";
 import { Paragraph } from "@/components/paragraph";
 import { SNSBox } from "@/components/snsBox";
@@ -92,6 +93,8 @@ const About = () => {
               <SkillDetail title="インフラ環境">{skills.infra.join(" / ")}</SkillDetail>
               <SkillDetail title="ツール">{skills.tool.join(" / ")}</SkillDetail>
             </Paragraph>
+
+            <History />
           </Box>
         </Box>
 

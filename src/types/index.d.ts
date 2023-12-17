@@ -57,8 +57,10 @@ export type Event = {
   side: "left" | "right";
   year: number | string;
   title: string;
-  content: string | React.ReactNode;
-  icon?: React.ReactNode | null;
+  content?: string | React.ReactNode;
+  icon?: string;
   supplement?: string;
   color?: string;
+  workId?: string;
+  href?: string;
 };
