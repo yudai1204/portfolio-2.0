@@ -101,7 +101,7 @@ export const WorkBody = (props: WorkBodyProps) => {
             ))}
         </Box>
       </Box>
-      <Box w="100%" py="0.5rem">
+      <Box w="100%" py="0.5rem" pl="0.5rem">
         <Flex w="100%" align="center" gap={2}>
           {work.githubUrl && (
             <Button

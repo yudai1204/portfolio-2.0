@@ -10,12 +10,12 @@ export const events: Event[] = [
     title: "誕生",
     color: "#f0620f",
   },
-  {
-    side: "right",
-    year: "2014/4 ~ 2020/3",
-    title: "渋谷教育学園幕張中学校・高等学校",
-    color: "#f06b0f",
-  },
+  // {
+  //   side: "right",
+  //   year: "2014/4 ~ 2020/3",
+  //   title: "渋谷教育学園幕張中学校・高等学校",
+  //   color: "#f06b0f",
+  // },
   {
     side: "right",
     year: "2014/5 ~ 2019/3",

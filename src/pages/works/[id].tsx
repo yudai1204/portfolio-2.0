@@ -54,18 +54,16 @@ const Work = () => {
       <Box bgColor="#ffe8b611" minH="100vh">
         <Menu active="works" />
         <Box zIndex={0} pt={{ base: "3rem", md: "5rem" }}>
-          <Box maxW="780px" mx="auto" pb="2rem" pos="relative">
-            <Box>
+          <Box maxW="780px" mx="auto" pb="2rem" pos="relative" mt="1rem">
+            <Box pt="1rem">
               <Heading as="h2" size="lg" textAlign="center" py="2rem">
                 {work.title}
               </Heading>
               <WorkBody work={work} imageNodes={imageNodes} centering />
             </Box>
-            <Box pos="absolute" top="0" left="0">
+            <Box pos="absolute" top="0" left={{ base: ".5rem", md: "0" }}>
               <Link href="/works">
-                <Button mt="1rem" variant="outline">
-                  Works一覧へ
-                </Button>
+                <Button variant="outline">Works一覧へ</Button>
               </Link>
             </Box>
           </Box>
