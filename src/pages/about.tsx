@@ -7,12 +7,11 @@ import { MdPersonOutline } from "react-icons/md";
 import { RiChatHistoryLine } from "react-icons/ri";
 import { Footer } from "../components/footer";
 import { Menu } from "../components/menu";
-import { SkillDetail } from "../components/skillDetail";
 import { History } from "@/components/history";
 import { IntroductionCard } from "@/components/introductionCard";
 import { Paragraph } from "@/components/paragraph";
+import { Skills } from "@/components/skills";
 import { SNSBox } from "@/components/snsBox";
-import { skills } from "@/data";
 
 const About = () => {
   const myOld = useMemo(() => {
@@ -71,10 +70,7 @@ const About = () => {
             </Paragraph>
 
             <Paragraph title="Skills" icon={LuWrench}>
-              <SkillDetail title="プログラミング言語">{skills.lang.map((x) => x.name).join(" / ")}</SkillDetail>
-              <SkillDetail title="フレームワーク">{skills.framework.map((x) => x.name).join(" / ")}</SkillDetail>
-              <SkillDetail title="インフラ環境">{skills.infra.map((x) => x.name).join(" / ")}</SkillDetail>
-              <SkillDetail title="ツール">{skills.tool.map((x) => x.name).join(" / ")}</SkillDetail>
+              <Skills />
             </Paragraph>
             <Paragraph title="History" icon={RiChatHistoryLine}>
               <History />

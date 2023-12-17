@@ -1,3 +1,5 @@
+import { Skill } from "@/types";
+
 export const affiliations = [
   { name: "芝浦工業大学 工学部情報工学科 実世界インタラクション研究室", link: null },
   { name: "ShibaLab (サークル)", link: "https://shibalab.com" },
@@ -14,7 +16,7 @@ export const awards = [
   "NASA Space Apps Challenge 2023 世界大会 出場",
 ];
 
-export const skills = {
+export const skills: { lang: Skill[]; framework: Skill[]; infra: Skill[]; tool?: Skill[] } = {
   lang: [
     {
       name: "JavaScript",
@@ -29,7 +31,7 @@ export const skills = {
       description: "最近ではJavaScriptよりもこちらを使うことが多いです。",
     },
     {
-      name: "Google Apps Script",
+      name: "GAS",
       level: 5,
       icon: "/Google_Apps_Script.svg",
       description: "スプレッドシートの自動化、アップローダーなど。主に趣味の範囲や個人取引で使用。",
@@ -155,7 +157,7 @@ export const skills = {
       description: "",
     },
     {
-      name: "Ruby on Rails",
+      name: "Rails",
       level: 3,
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rails/rails-plain.svg",
       description: "",

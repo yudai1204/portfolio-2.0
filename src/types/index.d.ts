@@ -64,3 +64,10 @@ export type Event = {
   workId?: string;
   href?: string;
 };
+
+export type Skill = {
+  name: string;
+  level: number;
+  icon: string;
+  description: string;
+};

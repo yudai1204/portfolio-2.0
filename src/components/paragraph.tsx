@@ -12,7 +12,7 @@ export const Paragraph = (props: Props) => {
   const { title, children, animation = true } = props;
   const isSafari = useIsSafari();
   const ParagraphMain = () => (
-    <Box maxW="780px" mx="auto" px="1rem" mt={{ base: "3rem", md: "2rem" }} mb={{ base: "4rem", md: "3rem" }}>
+    <Box maxW="780px" mx="auto" px="1rem" mt="2rem" mb={{ base: "2rem", md: "3rem" }}>
       <Flex align="center" justify="flex-start" mb=".8rem" gap=".8rem">
         {/* @ts-ignore */}
         <Icon as={props.icon} fontSize="3xl" />

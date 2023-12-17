@@ -11,10 +11,10 @@ import { Footer } from "../components/footer";
 import { IntroductionSwiper } from "../components/introductionSwiper";
 import { Menu } from "../components/menu";
 import { Paragraph } from "../components/paragraph";
-import { SkillDetail } from "../components/skillDetail";
-import { affiliations, awards, skills } from "../data";
+import { affiliations, awards } from "../data";
 import { CustomButton as Button } from "@/components/customButton";
 import { History } from "@/components/history";
+import { Skills } from "@/components/skills";
 import { WorksCarousel } from "@/components/worksCarousel";
 
 const Home = () => {
@@ -149,10 +149,7 @@ const Home = () => {
           </Paragraph>
 
           <Paragraph title="Skills" icon={LuWrench}>
-            <SkillDetail title="プログラミング言語">{skills.lang.map((x) => x.name).join(" / ")}</SkillDetail>
-            <SkillDetail title="フレームワーク">{skills.framework.map((x) => x.name).join(" / ")}</SkillDetail>
-            <SkillDetail title="インフラ環境">{skills.infra.map((x) => x.name).join(" / ")}</SkillDetail>
-            <SkillDetail title="ツール">{skills.tool.map((x) => x.name).join(" / ")}</SkillDetail>
+            <Skills />
           </Paragraph>
         </Box>
 
