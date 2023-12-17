@@ -14,12 +14,7 @@ export const WorksCarousel = () => {
   const router = useRouter();
   const isSafari = useIsSafari();
   return (
-    <Box
-      w="100%"
-      onClick={() => {
-        router.push("/works");
-      }}
-    >
+    <Box w="100%">
       <Swiper
         slidesPerView={1}
         modules={[Autoplay, Pagination, EffectCards]}
@@ -51,6 +46,7 @@ export const WorksCarousel = () => {
                   bgPosition="center"
                   h="100%"
                   cursor="pointer"
+                  onClick={() => router.push(`/works/${work.id}`)}
                 >
                   <Box backdropFilter="blur(10px)" w="100%" h="100%" bgColor="#fff5" position="relative">
                     <Image src={work.imageUrls[0]} alt={work.title} w="100%" aspectRatio="16/10" objectFit="contain" />

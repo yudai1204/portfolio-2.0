@@ -41,6 +41,7 @@ export type Tag =
   | "Three.js";
 
 export type Work = {
+  id: string;
   title: string;
   year: string;
   shortDescription: string | ReactElement;
@@ -50,4 +51,14 @@ export type Work = {
   githubUrl?: string;
   urls?: { name: string; url: string }[];
   tags?: Tag[];
+};
+
+export type Event = {
+  side: "left" | "right";
+  year: number | string;
+  title: string;
+  content: string | React.ReactNode;
+  icon?: React.ReactNode | null;
+  supplement?: string;
+  color?: string;
 };

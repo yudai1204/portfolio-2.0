@@ -33,6 +33,94 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
+type WorkBodyProps = {
+  work: WorkType;
+  imageNodes: JSX.Element[];
+  centering?: boolean;
+};
+export const WorkBody = (props: WorkBodyProps) => {
+  const { work, imageNodes, centering } = props;
+  return (
+    <>
+      {work.tags && (
+        <Flex gap={1} wrap="wrap" py="1rem" justifyContent={centering ? "center" : "flex-start"}>
+          {work.tags.map((tag) => (
+            <Badge key={tag} fontSize="sm" color={useCM("gray.600", "gray.400")}>
+              {tag}
+            </Badge>
+          ))}
+        </Flex>
+      )}
+      <Swiper
+        slidesPerView={1}
+        modules={[Navigation, Autoplay, Pagination]}
+        navigation={true}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        speed={1000}
+        autoplay={{
+          delay: 7000,
+          // disableOnInteraction: false,
+        }}
+        style={{ width: "100%", maxWidth: "640px", boxShadow: "0 0 6px #666a", borderRadius: ".5rem" }}
+      >
+        {imageNodes.map((node, idx) => (
+          <SwiperSlide key={idx}>{node}</SwiperSlide>
+        ))}
+      </Swiper>
+      <Box p="2rem">
+        <Box py="1rem">{work.longDescription}</Box>
+        <Box>
+          {work.urls &&
+            work.urls.map((item) => (
+              <Link
+                key={item.url}
+                variant="outline"
+                href={item.url}
+                isExternal
+                w="fit-content"
+                display="block"
+                borderRadius="5px"
+                _hover={{ bgColor: useCM("gray.100", "gray.600") }}
+              >
+                <Text
+                  textDecor="underline"
+                  fontSize="90%"
+                  color={useCM("gray.600", "gray.400")}
+                  w="fit-content"
+                  display="block"
+                  py="3px"
+                  px="5px"
+                >
+                  {item.name}
+                  <Icon as={FiExternalLink} ml="2px" />
+                </Text>
+              </Link>
+            ))}
+        </Box>
+      </Box>
+      <Box w="100%" py="0.5rem">
+        <Flex w="100%" align="center" gap={2}>
+          {work.githubUrl && (
+            <Button
+              variant="outline"
+              onClick={() => {
+                window.open(work.githubUrl, "_blank");
+              }}
+            >
+              <Icon aria-label="Github" as={BsGithub} variant="solid" />
+              <Text ml="2">Github</Text>
+            </Button>
+          )}
+          <Text>制作: {work.year}年</Text>
+        </Flex>
+      </Box>
+    </>
+  );
+};
+
 type ModalProps = {
   work: WorkType;
   onClose: () => void;
@@ -53,81 +141,7 @@ export const WorkModal = (props: ModalProps) => {
         <ModalCloseButton />
         <Box overflow="auto">
           <ModalBody>
-            {work.tags && (
-              <Flex gap={1} wrap="wrap" py="1rem">
-                {work.tags.map((tag) => (
-                  <Badge key={tag} fontSize="sm" color={useCM("gray.600", "gray.400")}>
-                    {tag}
-                  </Badge>
-                ))}
-              </Flex>
-            )}
-            <Swiper
-              slidesPerView={1}
-              modules={[Navigation, Autoplay, Pagination]}
-              navigation={true}
-              loop={true}
-              pagination={{
-                clickable: true,
-              }}
-              speed={1000}
-              autoplay={{
-                delay: 7000,
-                // disableOnInteraction: false,
-              }}
-              style={{ width: "100%", maxWidth: "640px", boxShadow: "0 0 6px #666a", borderRadius: ".5rem" }}
-            >
-              {imageNodes.map((node, idx) => (
-                <SwiperSlide key={idx}>{node}</SwiperSlide>
-              ))}
-            </Swiper>
-            <Box p="2rem">
-              <Box py="1rem">{work.longDescription}</Box>
-              <Box>
-                {work.urls &&
-                  work.urls.map((item) => (
-                    <Link
-                      key={item.url}
-                      variant="outline"
-                      href={item.url}
-                      isExternal
-                      w="fit-content"
-                      display="block"
-                      borderRadius="5px"
-                      _hover={{ bgColor: useCM("gray.100", "gray.600") }}
-                    >
-                      <Text
-                        textDecor="underline"
-                        fontSize="90%"
-                        color={useCM("gray.600", "gray.400")}
-                        w="fit-content"
-                        display="block"
-                        py="3px"
-                        px="5px"
-                      >
-                        {item.name}
-                        <Icon as={FiExternalLink} ml="2px" />
-                      </Text>
-                    </Link>
-                  ))}
-              </Box>
-            </Box>
-            <Box w="100%" py="0.5rem">
-              <Flex w="100%" align="center" gap={2}>
-                {work.githubUrl && (
-                  <Button
-                    variant="outline"
-                    onClick={() => {
-                      window.open(work.githubUrl, "_blank");
-                    }}
-                  >
-                    <Icon aria-label="Github" as={BsGithub} variant="solid" />
-                    <Text ml="2">Github</Text>
-                  </Button>
-                )}
-                <Text>制作: {work.year}年</Text>
-              </Flex>
-            </Box>
+            <WorkBody work={work} imageNodes={imageNodes} />
           </ModalBody>
         </Box>
       </ModalContent>
@@ -159,7 +173,17 @@ export const Work = (props: Props) => {
     [work],
   );
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen: onOpenModal, onClose: onCloseModal } = useDisclosure();
+
+  const onOpen = () => {
+    onOpenModal();
+    history.replaceState(null, "", `/works/${work.id}`);
+  };
+
+  const onClose = () => {
+    onCloseModal();
+    history.replaceState(null, "", `/works`);
+  };
 
   return (
     <Card

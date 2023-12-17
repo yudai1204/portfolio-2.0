@@ -3,6 +3,7 @@ import type { Work } from "../types";
 
 export const works: Work[] = [
   {
+    id: "moonquake-viewer",
     title: "Moonquake Viewer",
     year: "2023",
     shortDescription:
@@ -31,6 +32,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "scombz-utilities",
     title: "ScombZ Utilities",
     year: "2022",
     shortDescription: "大学の学生ポータルサイトのUI/UXを改善し、学生にとって使いやすくするためのブラウザ拡張機能です。",
@@ -61,6 +63,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "bingo-app",
     title: "Bingo App",
     year: "2023",
     shortDescription:
@@ -85,6 +88,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "portfolio",
     title: "ポートフォリオサイト",
     year: "2023",
     shortDescription: "このポートフォリオサイトです。実は2代目で、以前のものとは分離して完全な作り直しを行いました。",
@@ -116,6 +120,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "open-in-fork-button",
     title: "Open in Fork Button",
     year: "2023",
     shortDescription: "VSCodeでGitクライアントであるForkを開くボタンを追加する拡張機能です。",
@@ -140,6 +145,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "amazon-sakura-checker-viewer",
     title: "Amazon Sakura Checker Viewer",
     year: "2023",
     shortDescription: "Amazonの商品一覧画面にサクラチェッカーの結果を表示します。",
@@ -165,6 +171,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "youtube-ascii-art-maker",
     title: "YouTube ASCII ART Maker",
     year: "2023",
     shortDescription: "YouTubeの字幕機能を使ってアスキーアートを色付きで生成するpythonスクリプトです。",
@@ -192,6 +199,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "reply-generator",
     title: "クソリプジェネレータ",
     year: "2023",
     shortDescription:
@@ -220,6 +228,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "google-drive-uploader",
     title: "GoogleDrive Uploder(仮)",
     year: "2022",
     shortDescription:
@@ -239,6 +248,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "llamaindex-linebot",
     title: "AI診察Bot",
     year: "2023",
     shortDescription:
@@ -261,6 +271,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "school-festival-2019",
     title: "文化祭ステージ企画",
     year: "2019",
     shortDescription: "ステージ背景の3枚のプロジェクタを管理するアプリケーションです。",
@@ -280,6 +291,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "scombz-status-bot",
     title: "ScombZ Status Bot",
     year: "2023",
     shortDescription:
@@ -304,6 +316,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "shibalab-fireworks",
     title: "みんなで作る花火大会",
     year: "2022",
     shortDescription:
@@ -329,6 +342,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "shibalab-catandseek",
     title: "Cat and Seek",
     year: "2023",
     shortDescription: "懐中電灯を動かして隠れた猫を探すというインタラクティブアート作品です。",
@@ -353,6 +367,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "shibalab-web",
     title: "ShibaLab Webサイト",
     year: "2022",
     shortDescription: "自身が所属するメディアアート制作サークルのホームページを作成しました。",
@@ -377,6 +392,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "bolide",
     title: "bolide for Chrome",
     year: "2023",
     shortDescription: "ニコニコ動画のように画面にコメントを流すブラウザ拡張機能を1日で制作しました。",
@@ -394,6 +410,7 @@ export const works: Work[] = [
   },
 
   {
+    id: "shibalab-video",
     title: "ShibaLab 紹介動画",
     year: "2023",
     shortDescription: "新入生向けに所属するサークルであるShibaLabの紹介動画を作成しました。",
