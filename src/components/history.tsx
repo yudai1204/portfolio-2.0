@@ -45,12 +45,12 @@ const TimelineEvent = (props: TimelineEventProps) => {
   const { year, content, title, supplement, workId, href } = props.event;
   const work = workId ? works.find((work) => work.id === workId) : undefined;
   return (
-    <Flex direction="column" h="100%" w="fit-content" zIndex={1} gap=".2rem">
+    <Flex direction="column" h="100%" zIndex={1} gap=".2rem">
       <Box>
         <Text as="p" fontSize="sm">
           {year}
         </Text>
-        <Heading as="h4" fontSize="1.1rem" py=".2rem" fontWeight={content ? "bold" : "normal"}>
+        <Heading as="h4" fontSize="1.1rem" py=".2rem" fontWeight={content || workId ? "bold" : "normal"}>
           {workId ? (
             <Title icon={MdKeyboardDoubleArrowRight} href={`/works/${workId}`} title={title} />
           ) : href ? (
@@ -65,7 +65,7 @@ const TimelineEvent = (props: TimelineEventProps) => {
           </Text>
         )}
       </Box>
-      <Box>{content && (typeof content === "string" ? <Text>{content}</Text> : content)}</Box>
+      <Box>{content && (typeof content === "string" ? <Text fontSize="sm">{content}</Text> : content)}</Box>
       {work && (
         <VStack w="100%" align="center">
           {/* {work.imageUrls?.length && (
@@ -85,6 +85,7 @@ const TimelineEvent = (props: TimelineEventProps) => {
             onClick={() => router.push(`/works/${workId}`)}
             colorScheme="orange"
             w="100%"
+            mt=".5rem"
           >
             View Details
           </Button>

@@ -1,5 +1,5 @@
 export const affiliations = [
-  { name: "芝浦工業大学 工学部情報工学科 3年", link: null },
+  { name: "芝浦工業大学 工学部情報工学科 実世界インタラクション研究室", link: null },
   { name: "ShibaLab (サークル)", link: "https://shibalab.com" },
   { name: "デジクリ (サークル)", link: "https://digicre.net" },
   { name: "株式会社AppBrew 開発インターン", link: "https://https://appbrew.io/" },
