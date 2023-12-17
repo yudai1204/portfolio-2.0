@@ -72,9 +72,9 @@ const About = () => {
 
             <Paragraph title="Skills" icon={LuWrench}>
               <SkillDetail title="プログラミング言語">{skills.lang.map((x) => x.name).join(" / ")}</SkillDetail>
-              <SkillDetail title="フレームワーク">{skills.framework.join(" / ")}</SkillDetail>
-              <SkillDetail title="インフラ環境">{skills.infra.join(" / ")}</SkillDetail>
-              <SkillDetail title="ツール">{skills.tool.join(" / ")}</SkillDetail>
+              <SkillDetail title="フレームワーク">{skills.framework.map((x) => x.name).join(" / ")}</SkillDetail>
+              <SkillDetail title="インフラ環境">{skills.infra.map((x) => x.name).join(" / ")}</SkillDetail>
+              <SkillDetail title="ツール">{skills.tool.map((x) => x.name).join(" / ")}</SkillDetail>
             </Paragraph>
             <Paragraph title="History" icon={RiChatHistoryLine}>
               <History />
