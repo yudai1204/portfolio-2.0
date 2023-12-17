@@ -4,10 +4,10 @@ import { useMemo } from "react";
 import { IoTelescopeOutline } from "react-icons/io5";
 import { LuWrench } from "react-icons/lu";
 import { MdPersonOutline } from "react-icons/md";
+import { RiChatHistoryLine } from "react-icons/ri";
 import { Footer } from "../components/footer";
 import { Menu } from "../components/menu";
 import { SkillDetail } from "../components/skillDetail";
-import { CanvaSlide } from "@/components/canvaSlide";
 import { History } from "@/components/history";
 import { IntroductionCard } from "@/components/introductionCard";
 import { Paragraph } from "@/components/paragraph";
@@ -21,8 +21,8 @@ const About = () => {
     const diff = now.getTime() - birth.getTime();
     const diffDate = new Date(diff);
     const age = diffDate.getUTCFullYear() - 1970;
-    const month = diffDate.getUTCMonth();
-    return `${age}歳${month}ヶ月`;
+    // const month = diffDate.getUTCMonth();
+    return age;
   }, []);
 
   return (
@@ -38,9 +38,13 @@ const About = () => {
           </Heading>
           <Box py="2rem" w="100%">
             <IntroductionCard />
+            <Flex mx="0" p="0" mt="2rem" justify="center" align="center" display={{ base: "none", md: "flex" }}>
+              <SNSBox boxShadow="md" gap="1rem" />
+            </Flex>
           </Box>
           <Box maxW="780px" mx="auto" pb="2rem">
             <Paragraph title="About Me" icon={MdPersonOutline}>
+              <Text>檜山侑大 ({myOld})</Text>
               <Text>
                 芝浦工業大学情報工学科に所属する大学3年生です。プログラミングやデザインを通した「ものづくり」に興味があり活動しています。
               </Text>
@@ -55,29 +59,8 @@ const About = () => {
               <Text>
                 インターンシップでは、Reactやrailsなどを使ったWeb開発と、Unityを使ったアプリケーション開発を行っています。
               </Text>
-              <Box>
-                <Text>現在の年齢: {myOld} (自分用)</Text>
-              </Box>
             </Paragraph>
-            <Box maxW="780px" mx="auto" py="2rem" px="1rem">
-              <CanvaSlide />
-              <Box m="1rem">
-                Link:{" "}
-                <a
-                  href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFlMuGeCWA&#x2F;view?utm_content=DAFlMuGeCWA&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
-                  target="_blank"
-                  rel="noopener"
-                  style={{
-                    textDecoration: "underline",
-                  }}
-                >
-                  yudai04 | Self-Introduction
-                </a>
-              </Box>
-              <Flex my="1rem" mx="0" p="0" justify="center" align="center" display={{ base: "none", md: "flex" }}>
-                <SNSBox boxShadow="md" gap="1rem" />
-              </Flex>
-            </Box>
+
             <Paragraph title="Vision" icon={IoTelescopeOutline}>
               <Text>ユーザーにとってより良い製品を作れるエンジニアになりたいと考えています。</Text>
               <Text>具体的には、UI/UXなどを通じてプロダクトへの体験をより良いものにしたいと考えています。</Text>
@@ -93,8 +76,9 @@ const About = () => {
               <SkillDetail title="インフラ環境">{skills.infra.join(" / ")}</SkillDetail>
               <SkillDetail title="ツール">{skills.tool.join(" / ")}</SkillDetail>
             </Paragraph>
-
-            <History />
+            <Paragraph title="History" icon={RiChatHistoryLine}>
+              <History />
+            </Paragraph>
           </Box>
         </Box>
 

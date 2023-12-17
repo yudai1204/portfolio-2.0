@@ -1,6 +1,7 @@
 import { Box, Text, Grid, GridItem, Flex, Icon, Heading, Circle, Button, VStack, Image } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import { useRouter } from "next/router";
+import { useMemo } from "react";
 import { MdKeyboardDoubleArrowRight, MdOpenInNew } from "react-icons/md";
 import { Link } from "@/components/Link";
 import { works } from "@/data";
@@ -117,14 +118,18 @@ const TimelineIcon = (props: TimelineIconProps) => {
   );
 };
 
-const TimelineWide = () => {
+type TimelineProps = {
+  filteredEvents: Event[];
+};
+const TimelineWide = (props: TimelineProps) => {
+  const { filteredEvents } = props;
   return (
     <Grid templateColumns="repeat(9, 1fr)" rowGap="2rem" pos="relative" pb="1rem">
       <Box pos="absolute" top="5px" left="50%" transform="translateX(-50%)" w="4px" h="calc(100% - 5px)" zIndex={0}>
         <Box w="100%" h="95%" css={bgGradient} />
         <Box w="100%" h="5%" bg="linear-gradient(0deg, rgba(255, 240, 54, 0) 0%, rgba(255, 240, 54, 1) 100%);" />
       </Box>
-      {events.map((event) => (
+      {filteredEvents.map((event) => (
         <>
           <GridItem colSpan={4}>{event.side === "left" && <TimelineEvent event={event} />}</GridItem>
           <GridItem colSpan={1} zIndex={1}>
@@ -137,14 +142,15 @@ const TimelineWide = () => {
   );
 };
 
-const TimelineNarrow = () => {
+const TimelineNarrow = (props: TimelineProps) => {
+  const { filteredEvents } = props;
   return (
     <Grid templateColumns="repeat(20, 1fr)" rowGap="2rem" pos="relative" pb="1rem">
       <Box pos="absolute" top="5px" left="7.5%" transform="translateX(-50%)" w="4px" h="calc(100% - 5px)" zIndex={0}>
         <Box w="100%" h="95%" css={bgGradient} />
         <Box w="100%" h="5%" bg="linear-gradient(0deg, rgba(255, 240, 54, 0) 0%, rgba(255, 240, 54, 1) 100%);" />
       </Box>
-      {events.map((event) => (
+      {filteredEvents.map((event) => (
         <>
           <GridItem colSpan={3} zIndex={1}>
             <TimelineIcon icon={event.icon} color={event.color} />
@@ -159,7 +165,26 @@ const TimelineNarrow = () => {
   );
 };
 
-export const History = () => {
+type Props = {
+  rightonly?: boolean;
+  leftonly?: boolean;
+};
+export const History = (props: Props) => {
+  const { rightonly, leftonly } = props;
   const wideHeader = useWideHeader();
-  return wideHeader ? <TimelineWide /> : <TimelineNarrow />;
+
+  const filteredEvents = useMemo(() => {
+    if (rightonly) {
+      return events.filter((event) => event.side === "right");
+    } else if (leftonly) {
+      return events.filter((event) => event.side === "left");
+    }
+    return events;
+  }, [rightonly, leftonly]);
+
+  return wideHeader && !rightonly && !leftonly ? (
+    <TimelineWide filteredEvents={filteredEvents} />
+  ) : (
+    <TimelineNarrow filteredEvents={filteredEvents} />
+  );
 };

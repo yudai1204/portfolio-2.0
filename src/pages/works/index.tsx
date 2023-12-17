@@ -4,6 +4,7 @@ import { Footer } from "../../components/footer";
 import { Menu } from "../../components/menu";
 import { Work } from "../../components/work";
 import { works } from "../../data";
+// import { History } from "@/components/history";
 
 const Works = () => {
   return (
@@ -26,6 +27,9 @@ const Works = () => {
               <Work key={work.title} work={work} />
             ))}
           </Grid>
+        </Container>
+        <Container maxW="780px" mx="auto" mt="2rem">
+          {/* <History leftonly /> */}
         </Container>
         <Footer />
       </Box>

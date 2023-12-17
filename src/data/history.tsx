@@ -14,12 +14,14 @@ export const events: Event[] = [
     side: "right",
     year: "2014/4 ~ 2020/3",
     title: "渋谷教育学園幕張中学校・高等学校",
+    color: "#f06b0f",
   },
   {
     side: "right",
     year: "2014/5 ~ 2019/3",
     title: "部活動でロボコンに出場",
     supplement: "プログラミングに触れたきっかけ",
+    color: "#f0700f",
   },
   {
     side: "left",
@@ -28,6 +30,7 @@ export const events: Event[] = [
     supplement: "大会参加",
     content: "第30回仙台知能ロボットコンテスト 最優秀賞技術賞",
     href: "http://www.inrof.org/2018/irc/score/rinfo/robot086.html",
+    color: "#f0750f",
   },
   {
     side: "left",
@@ -36,11 +39,13 @@ export const events: Event[] = [
     supplement: "製作",
     content: "Apacheを使ったWebサーバー運用とステージ背景プロジェクターの管理アプリケーションを自作",
     workId: "school-festival-2019",
+    color: "#f07c0f",
   },
   {
     side: "right",
     year: "2021/4 ~ 現在",
     title: "芝浦工業大学 工学部 情報工学科",
+    color: "#f0850f",
   },
   {
     side: "right",
@@ -65,6 +70,7 @@ export const events: Event[] = [
     supplement: "製作",
     content: "学生ポータルサイトのUI/UXを改善するブラウザ拡張機能",
     workId: "scombz-utilities",
+    color: "#f0940f",
   },
   {
     side: "right",
@@ -72,6 +78,7 @@ export const events: Event[] = [
     title: "クラウドソーシング",
     supplement: "業務開発",
     content: "CrowdWorksやランサーズなどのクラウドソーシングサービスでエンジニアとして活動",
+    color: "#f09d0f",
   },
   {
     side: "left",

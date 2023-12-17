@@ -5,7 +5,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { GoFileDirectory } from "react-icons/go";
 import { LuWrench } from "react-icons/lu";
 import { MdPersonOutline, MdSlideshow, MdOutlineGroups } from "react-icons/md";
-import { RiAwardLine } from "react-icons/ri";
+import { RiAwardLine, RiChatHistoryLine } from "react-icons/ri";
 import { CanvaSlide } from "../components/canvaSlide";
 import { Footer } from "../components/footer";
 import { IntroductionSwiper } from "../components/introductionSwiper";
@@ -14,6 +14,7 @@ import { Paragraph } from "../components/paragraph";
 import { SkillDetail } from "../components/skillDetail";
 import { affiliations, awards, skills } from "../data";
 import { CustomButton as Button } from "@/components/customButton";
+import { History } from "@/components/history";
 import { WorksCarousel } from "@/components/worksCarousel";
 
 const Home = () => {
@@ -129,6 +130,22 @@ const Home = () => {
           </Paragraph>
 
           <Divider maxW="820px" mx="auto" borderColor="#ccc" />
+
+          <Paragraph title="History" icon={RiChatHistoryLine}>
+            <History rightonly />
+            <Center w="100%">
+              <Button
+                onClick={() => {
+                  router.push("/about");
+                }}
+                mt="1rem"
+                colorScheme="teal"
+                px="8rem"
+              >
+                More Details
+              </Button>
+            </Center>
+          </Paragraph>
 
           <Paragraph title="Skills" icon={LuWrench}>
             <SkillDetail title="プログラミング言語">{skills.lang.map((x) => x.name).join(" / ")}</SkillDetail>
