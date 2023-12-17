@@ -1,6 +1,9 @@
 import { Box, Text, Heading, Flex } from "@chakra-ui/react";
 import Head from "next/head";
 import { useMemo } from "react";
+import { IoTelescopeOutline } from "react-icons/io5";
+import { LuWrench } from "react-icons/lu";
+import { MdPersonOutline } from "react-icons/md";
 import { Footer } from "../components/footer";
 import { Menu } from "../components/menu";
 import { SkillDetail } from "../components/skillDetail";
@@ -36,7 +39,7 @@ const About = () => {
             <IntroductionCard />
           </Box>
           <Box maxW="780px" mx="auto" pb="2rem">
-            <Paragraph title="About Me">
+            <Paragraph title="About Me" icon={MdPersonOutline}>
               <Text>
                 芝浦工業大学情報工学科に所属する大学3年生です。プログラミングやデザインを通した「ものづくり」に興味があり活動しています。
               </Text>
@@ -74,7 +77,7 @@ const About = () => {
                 <SNSBox boxShadow="md" gap="1rem" />
               </Flex>
             </Box>
-            <Paragraph title="Vision">
+            <Paragraph title="Vision" icon={IoTelescopeOutline}>
               <Text>ユーザーにとってより良い製品を作れるエンジニアになりたいと考えています。</Text>
               <Text>具体的には、UI/UXなどを通じてプロダクトへの体験をより良いものにしたいと考えています。</Text>
               <Text>どんなに良い着眼点や機能がある製品であっても、UI/UXというユーザーが直接触れる部分が大切です。</Text>
@@ -83,7 +86,7 @@ const About = () => {
               </Text>
             </Paragraph>
 
-            <Paragraph title="Skills">
+            <Paragraph title="Skills" icon={LuWrench}>
               <SkillDetail title="プログラミング言語">{skills.lang.map((x) => x.name).join(" / ")}</SkillDetail>
               <SkillDetail title="フレームワーク">{skills.framework.join(" / ")}</SkillDetail>
               <SkillDetail title="インフラ環境">{skills.infra.join(" / ")}</SkillDetail>

@@ -2,6 +2,10 @@ import { Box, Center, Text, Divider, Link, Icon } from "@chakra-ui/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { FiExternalLink } from "react-icons/fi";
+import { GoFileDirectory } from "react-icons/go";
+import { LuWrench } from "react-icons/lu";
+import { MdPersonOutline, MdSlideshow, MdOutlineGroups } from "react-icons/md";
+import { RiAwardLine } from "react-icons/ri";
 import { CanvaSlide } from "../components/canvaSlide";
 import { Footer } from "../components/footer";
 import { IntroductionSwiper } from "../components/introductionSwiper";
@@ -32,7 +36,7 @@ const Home = () => {
           <IntroductionSwiper />
         </Box>
         <Box px={{ base: "1rem", md: "none" }}>
-          <Paragraph title="About Me">
+          <Paragraph title="About Me" icon={MdPersonOutline}>
             <Text>
               中学でロボコンに出場する部活動に入りロボットプログラミングや電子工作を学びました。
               また、同時期にBasic言語で簡易的なゲームやツール等を作成し、Windows上でのアプリケーション開発を学びました。
@@ -57,7 +61,7 @@ const Home = () => {
 
           <Divider maxW="820px" mx="auto" borderColor="#ccc" />
 
-          <Paragraph title="Slide">
+          <Paragraph title="Slide" icon={MdSlideshow}>
             <Text>自己紹介スライドです。</Text>
             <Box w="100%" py="1rem">
               <CanvaSlide />
@@ -79,7 +83,7 @@ const Home = () => {
 
           <Divider maxW="820px" mx="auto" borderColor="#ccc" />
 
-          <Paragraph title="Award">
+          <Paragraph title="Award" icon={RiAwardLine}>
             {awards.map((text) => (
               <Text key={text}>{text}</Text>
             ))}
@@ -87,7 +91,7 @@ const Home = () => {
 
           <Divider maxW="820px" mx="auto" borderColor="#ccc" />
 
-          <Paragraph title="Affiliation">
+          <Paragraph title="Affiliation" icon={MdOutlineGroups}>
             {affiliations.map((aff) => (
               <>
                 {!aff.link && <Text key={aff.name}>{aff.name}</Text>}
@@ -105,7 +109,7 @@ const Home = () => {
 
           <Divider maxW="820px" mx="auto" borderColor="#ccc" />
 
-          <Paragraph title="Works">
+          <Paragraph title="Works" icon={GoFileDirectory}>
             <Box w="100%" m="1rem" mx="auto" maxW="580px">
               <WorksCarousel />
             </Box>
@@ -126,7 +130,7 @@ const Home = () => {
 
           <Divider maxW="820px" mx="auto" borderColor="#ccc" />
 
-          <Paragraph title="Skills">
+          <Paragraph title="Skills" icon={LuWrench}>
             <SkillDetail title="プログラミング言語">{skills.lang.map((x) => x.name).join(" / ")}</SkillDetail>
             <SkillDetail title="フレームワーク">{skills.framework.join(" / ")}</SkillDetail>
             <SkillDetail title="インフラ環境">{skills.infra.join(" / ")}</SkillDetail>
