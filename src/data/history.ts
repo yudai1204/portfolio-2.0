@@ -187,11 +187,12 @@ export const events: Event[] = [
   },
   {
     side: "right",
-    year: "2023/10",
+    year: "2023/10 ~ 現在",
     title: "株式会社ウサギィ",
     supplement: "開発アルバイト",
     href: "https://usagee.co.jp/",
     icon: "usagee-logo.jpg",
+    content: "AIを使ったWebサービス開発",
   },
   {
     side: "right",
