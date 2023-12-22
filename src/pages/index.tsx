@@ -118,13 +118,12 @@ const Home = () => {
             <Box w="100%" m="1rem" mx="auto" maxW="580px">
               <WorksCarousel />
             </Box>
-            <Text>過去に制作した作品など、詳細はこちらのページをご覧ください。</Text>
+            <Text textAlign="center">過去に制作した作品など、詳細はこちらのページをご覧ください。</Text>
             <Center w="100%">
               <Button
                 onClick={() => {
                   router.push("/works");
                 }}
-                mt="1rem"
                 colorScheme="teal"
                 px="8rem"
               >
@@ -137,9 +136,9 @@ const Home = () => {
 
           <Paragraph title="History" icon={RiChatHistoryLine}>
             <History rightonly nodetail />
-            <Center w="100%" mt="1rem">
-              <Text opacity="0.7">過去の作品や所属のタイムラインの詳細はこちらのページをご覧ください。</Text>
-            </Center>
+            <Text mt="1rem" textAlign="center" w="100%">
+              過去の作品や所属のタイムラインの詳細はこちらのページをご覧ください。
+            </Text>
             <Center w="100%">
               <Button
                 onClick={() => {
