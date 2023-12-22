@@ -23,7 +23,15 @@ export const SkillDetail = (props: Props) => {
         >
           {data.map((x, i) => (
             <GridItem key={i} w="100%">
-              <Flex align="center" w="100%" h="3rem" gap=".5rem">
+              <Flex
+                align="center"
+                w="100%"
+                h="3rem"
+                gap=".5rem"
+                title={x.description ?? null}
+                transition="all .2s"
+                _hover={{ opacity: 0.7 }}
+              >
                 <Image src={x.icon} alt={x.name} w="2.5rem" h="2.5rem" />
                 <Box>
                   <Text fontSize="sm" ml=".3rem">

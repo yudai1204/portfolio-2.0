@@ -40,9 +40,11 @@ const Title = (props: TimelineTitleProps) => {
 
 type TimelineEventProps = {
   event: Event;
+  nodetail?: boolean;
 };
 const TimelineEvent = (props: TimelineEventProps) => {
   const router = useRouter();
+  const { nodetail } = props;
   const { year, content, title, supplement, workId, href } = props.event;
   const work = workId ? works.find((work) => work.id === workId) : undefined;
   return (
@@ -66,7 +68,9 @@ const TimelineEvent = (props: TimelineEventProps) => {
           </Text>
         )}
       </Box>
-      <Box>{content && (typeof content === "string" ? <Text fontSize="sm">{content}</Text> : content)}</Box>
+      <Box>
+        {nodetail !== true && content && (typeof content === "string" ? <Text fontSize="sm">{content}</Text> : content)}
+      </Box>
       {work && (
         <VStack w="100%" align="center">
           {/* {work.imageUrls?.length && (
@@ -120,9 +124,10 @@ const TimelineIcon = (props: TimelineIconProps) => {
 
 type TimelineProps = {
   filteredEvents: Event[];
+  nodetail?: boolean;
 };
 const TimelineWide = (props: TimelineProps) => {
-  const { filteredEvents } = props;
+  const { filteredEvents, nodetail } = props;
   return (
     <Grid templateColumns="repeat(9, 1fr)" rowGap="2rem" pos="relative" pt="45px" pb="6rem">
       <Box pos="absolute" top="50px" left="50%" transform="translateX(-50%)" w="4px" h="calc(100% - 50px)" zIndex={0}>
@@ -131,11 +136,15 @@ const TimelineWide = (props: TimelineProps) => {
       </Box>
       {filteredEvents.map((event) => (
         <>
-          <GridItem colSpan={4}>{event.side === "left" && <TimelineEvent event={event} />}</GridItem>
+          <GridItem colSpan={4}>
+            {event.side === "left" && <TimelineEvent event={event} nodetail={nodetail} />}
+          </GridItem>
           <GridItem colSpan={1} zIndex={1}>
             <TimelineIcon icon={event.icon} color={event.color} />
           </GridItem>
-          <GridItem colSpan={4}>{event.side === "right" && <TimelineEvent event={event} />}</GridItem>
+          <GridItem colSpan={4}>
+            {event.side === "right" && <TimelineEvent event={event} nodetail={nodetail} />}
+          </GridItem>
         </>
       ))}
     </Grid>
@@ -143,7 +152,7 @@ const TimelineWide = (props: TimelineProps) => {
 };
 
 const TimelineNarrow = (props: TimelineProps) => {
-  const { filteredEvents } = props;
+  const { filteredEvents, nodetail } = props;
   return (
     <Grid templateColumns="repeat(20, 1fr)" rowGap="2rem" pos="relative" pb="1rem">
       <Box pos="absolute" top="5px" left="7.5%" transform="translateX(-50%)" w="4px" h="calc(100% - 5px)" zIndex={0}>
@@ -156,7 +165,7 @@ const TimelineNarrow = (props: TimelineProps) => {
             <TimelineIcon icon={event.icon} color={event.color} />
           </GridItem>
           <GridItem colSpan={16}>
-            <TimelineEvent event={event} />
+            <TimelineEvent event={event} nodetail={nodetail} />
           </GridItem>
           <GridItem colSpan={1} />
         </>
@@ -168,9 +177,10 @@ const TimelineNarrow = (props: TimelineProps) => {
 type Props = {
   rightonly?: boolean;
   leftonly?: boolean;
+  nodetail?: boolean;
 };
 export const History = (props: Props) => {
-  const { rightonly, leftonly } = props;
+  const { rightonly, leftonly, nodetail } = props;
   const wideHeader = useWideHeader();
 
   const filteredEvents = useMemo(() => {
@@ -186,8 +196,8 @@ export const History = (props: Props) => {
   }, [rightonly, leftonly]);
 
   return wideHeader && !rightonly && !leftonly ? (
-    <TimelineWide filteredEvents={filteredEvents} />
+    <TimelineWide filteredEvents={filteredEvents} nodetail={nodetail} />
   ) : (
-    <TimelineNarrow filteredEvents={filteredEvents} />
+    <TimelineNarrow filteredEvents={filteredEvents} nodetail={nodetail} />
   );
 };

@@ -133,15 +133,18 @@ const Home = () => {
           <Divider maxW="820px" mx="auto" borderColor="#ccc" />
 
           <Paragraph title="History" icon={RiChatHistoryLine}>
-            <History rightonly />
+            <History rightonly nodetail />
+            <Center w="100%" mt="1rem">
+              <Text opacity="0.7">過去の作品や所属のタイムラインの詳細はこちらのページをご覧ください。</Text>
+            </Center>
             <Center w="100%">
               <Button
                 onClick={() => {
-                  router.push("/about");
+                  router.push("/about#history");
                 }}
-                mt="1rem"
                 colorScheme="teal"
                 px="8rem"
+                display="block"
               >
                 More Details
               </Button>

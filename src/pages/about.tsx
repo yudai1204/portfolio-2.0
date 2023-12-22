@@ -1,6 +1,7 @@
 import { Box, Text, Heading, Flex } from "@chakra-ui/react";
 import Head from "next/head";
-import { useMemo } from "react";
+import { useRouter } from "next/router";
+import { useMemo, useEffect, useRef } from "react";
 import { IoTelescopeOutline } from "react-icons/io5";
 import { LuWrench } from "react-icons/lu";
 import { MdPersonOutline } from "react-icons/md";
@@ -23,6 +24,18 @@ const About = () => {
     // const month = diffDate.getUTCMonth();
     return age;
   }, []);
+
+  const router = useRouter();
+  const historyRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (historyRef && router.asPath.endsWith("#history")) {
+        const scrollHeight = historyRef.current?.offsetTop;
+        if (scrollHeight) window.scrollTo({ top: scrollHeight - 50, behavior: "smooth" });
+      }
+    }, 500);
+  }, [router.asPath, historyRef]);
 
   return (
     <>
@@ -72,6 +85,7 @@ const About = () => {
             <Paragraph title="Skills" icon={LuWrench}>
               <Skills />
             </Paragraph>
+            <Box ref={historyRef} />
             <Paragraph title="History" icon={RiChatHistoryLine}>
               <History />
             </Paragraph>
