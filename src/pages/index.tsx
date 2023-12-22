@@ -40,6 +40,9 @@ const Home = () => {
         <Box px={{ base: "1rem", md: "none" }}>
           <Paragraph title="About Me" icon={MdPersonOutline}>
             <Text>
+              芝浦工業大学情報工学科に所属する大学3年生です。プログラミングやデザインを通した「ものづくり」に興味があり活動しています。
+            </Text>
+            <Text>
               中学でロボコンに出場する部活動に入りロボットプログラミングや電子工作を学びました。
               また、同時期にBasic言語で簡易的なゲームやツール等を作成し、Windows上でのアプリケーション開発を学びました。
             </Text>
@@ -144,7 +147,6 @@ const Home = () => {
                 }}
                 colorScheme="teal"
                 px="8rem"
-                display="block"
               >
                 More Details
               </Button>
