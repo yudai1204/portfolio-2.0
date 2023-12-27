@@ -1,3 +1,4 @@
+日本語の説明は[こちら](https://yudai04.dev/works/portfolio)
 ## About 
 
 This is the portfolio website by [yudai1204](https://yudai04.dev).
