@@ -157,7 +157,7 @@ export const skills: { lang: Skill[]; framework: Skill[]; infra: Skill[]; tool?:
       description: "",
     },
     {
-      name: "Unreal Engine",
+      name: "Unreal 5",
       level: 2,
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original-wordmark.svg",
       description: "",
