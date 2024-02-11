@@ -63,7 +63,7 @@ export const skills: { lang: Skill[]; framework: Skill[]; infra: Skill[]; tool?:
     },
     {
       name: "Java",
-      level: 2,
+      level: 3,
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
       description: "授業やインタラクティブアート制作で利用",
     },
@@ -72,13 +72,13 @@ export const skills: { lang: Skill[]; framework: Skill[]; infra: Skill[]; tool?:
     // { name: "CSS", level: 5, icon: "", description: "" },
     {
       name: "Ruby",
-      level: 2,
+      level: 3,
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
       description: "主にインターンシップで利用",
     },
     {
       name: "C#",
-      level: 2,
+      level: 3,
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
       description: "主にインターンシップで利用",
     },
@@ -90,7 +90,7 @@ export const skills: { lang: Skill[]; framework: Skill[]; infra: Skill[]; tool?:
     },
     {
       name: "Dart",
-      level: 1,
+      level: 2,
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg",
       description: "インターンシップなどで利用",
     },
@@ -129,7 +129,7 @@ export const skills: { lang: Skill[]; framework: Skill[]; infra: Skill[]; tool?:
     {
       name: "NestJS",
       level: 2,
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg",
       description: "",
     },
     {
@@ -157,6 +157,18 @@ export const skills: { lang: Skill[]; framework: Skill[]; infra: Skill[]; tool?:
       description: "",
     },
     {
+      name: "Unreal Engine",
+      level: 2,
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original-wordmark.svg",
+      description: "",
+    },
+    {
+      name: "electron",
+      level: 2,
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/electron/electron-original.svg",
+      description: "",
+    },
+    {
       name: "Rails",
       level: 3,
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rails/rails-plain.svg",
@@ -179,7 +191,7 @@ export const skills: { lang: Skill[]; framework: Skill[]; infra: Skill[]; tool?:
     {
       name: "AWS",
       level: 2,
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
       description: "",
     },
     {
@@ -190,7 +202,7 @@ export const skills: { lang: Skill[]; framework: Skill[]; infra: Skill[]; tool?:
     },
     {
       name: "Docker",
-      level: 1,
+      level: 2,
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
       description: "",
     },
