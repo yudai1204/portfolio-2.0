@@ -21,35 +21,37 @@ export const SkillDetail = (props: Props) => {
           w="fit-content"
           margin="0 auto"
         >
-          {data.map((x, i) => (
-            <GridItem key={i} w="100%">
-              <Flex
-                align="center"
-                w="100%"
-                h="3rem"
-                gap=".5rem"
-                title={x.description ?? null}
-                transition="all .2s"
-                _hover={{ opacity: 0.7 }}
-              >
-                <Image src={x.icon} alt={x.name} w="2.5rem" h="2.5rem" />
-                <Box>
-                  <Text fontSize="sm" ml=".3rem">
-                    {x.name}
-                  </Text>
-                  <Flex gap="0">
-                    {Array.from({ length: 5 }).map((_, i) =>
-                      i < x.level ? (
-                        <Icon key={i} as={MdStar} color="#f0800f" filter="drop-shadow(0 0 3px #f0ad0f66)" />
-                      ) : (
-                        <Icon key={i} as={MdStarBorder} color="#f0800f" filter="drop-shadow(0 0 3px #f0ad0f66)" />
-                      ),
-                    )}
-                  </Flex>
-                </Box>
-              </Flex>
-            </GridItem>
-          ))}
+          {data
+            .sort((a, b) => b.level - a.level)
+            .map((x, i) => (
+              <GridItem key={i} w="100%">
+                <Flex
+                  align="center"
+                  w="100%"
+                  h="3rem"
+                  gap=".5rem"
+                  title={x.description ?? null}
+                  transition="all .2s"
+                  _hover={{ opacity: 0.7 }}
+                >
+                  <Image src={x.icon} alt={x.name} w="2.5rem" h="2.5rem" />
+                  <Box>
+                    <Text fontSize="sm" ml=".3rem">
+                      {x.name}
+                    </Text>
+                    <Flex gap="0">
+                      {Array.from({ length: 5 }).map((_, i) =>
+                        i < x.level ? (
+                          <Icon key={i} as={MdStar} color="#f0800f" filter="drop-shadow(0 0 3px #f0ad0f66)" />
+                        ) : (
+                          <Icon key={i} as={MdStarBorder} color="#f0800f" filter="drop-shadow(0 0 3px #f0ad0f66)" />
+                        ),
+                      )}
+                    </Flex>
+                  </Box>
+                </Flex>
+              </GridItem>
+            ))}
         </Grid>
       </Box>
     </Box>

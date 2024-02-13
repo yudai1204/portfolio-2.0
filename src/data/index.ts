@@ -110,7 +110,7 @@ export const skills: { lang: Skill[]; framework: Skill[]; infra: Skill[]; tool?:
     },
     {
       name: "Next.js",
-      level: 4,
+      level: 5,
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
       description: "",
     },
