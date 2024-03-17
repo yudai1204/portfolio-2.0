@@ -119,7 +119,7 @@ export const events: Event[] = [
   },
   {
     side: "right",
-    year: "2023/7 ~ 現在",
+    year: "2023/7 ~ 2024/3",
     title: "株式会社AppBrew",
     supplement: "インターンシップ (通年)",
     content: "React, Railsを使ったWeb開発インターンシップ",

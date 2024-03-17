@@ -144,31 +144,31 @@ export const works: Work[] = [
     tags: ["TypeScript", "VSCode拡張機能", "個人開発"],
   },
 
-  {
-    id: "amazon-sakura-checker-viewer",
-    title: "Amazon Sakura Checker Viewer",
-    year: "2023",
-    shortDescription: "Amazonの商品一覧画面にサクラチェッカーの結果を表示します。",
-    longDescription: (
-      <>
-        <Text>
-          Amazonの商品一覧画面にサクラチェッカーの結果を表示します。また、類似サービスであるReviewMetaの結果も表示します。
-        </Text>
-        <Text>
-          クリックなしに結果を表示するため、Amazonの商品詳細を見ながらサクラチェッカーの結果を確認することができます。
-        </Text>
-      </>
-    ),
-    imageUrls: ["sakurachecker.jpg"],
-    githubUrl: "https://github.com/yudai1204/sakura-checker-viewer",
-    urls: [
-      {
-        name: "Chromeウェブストア",
-        url: "https://chromewebstore.google.com/detail/amazon-sakura-checker-vie/mmadhiofkjibiodihnmicliiipgiofha?hl=ja",
-      },
-    ],
-    tags: ["個人開発", "Chrome拡張機能", "JavaScript"],
-  },
+  // {
+  //   id: "amazon-sakura-checker-viewer",
+  //   title: "Amazon Sakura Checker Viewer",
+  //   year: "2023",
+  //   shortDescription: "Amazonの商品一覧画面にサクラチェッカーの結果を表示します。",
+  //   longDescription: (
+  //     <>
+  //       <Text>
+  //         Amazonの商品一覧画面にサクラチェッカーの結果を表示します。また、類似サービスであるReviewMetaの結果も表示します。
+  //       </Text>
+  //       <Text>
+  //         クリックなしに結果を表示するため、Amazonの商品詳細を見ながらサクラチェッカーの結果を確認することができます。
+  //       </Text>
+  //     </>
+  //   ),
+  //   imageUrls: ["sakurachecker.jpg"],
+  //   githubUrl: "https://github.com/yudai1204/sakura-checker-viewer",
+  //   urls: [
+  //     {
+  //       name: "Chromeウェブストア",
+  //       url: "https://chromewebstore.google.com/detail/amazon-sakura-checker-vie/mmadhiofkjibiodihnmicliiipgiofha?hl=ja",
+  //     },
+  //   ],
+  //   tags: ["個人開発", "Chrome拡張機能", "JavaScript"],
+  // },
 
   {
     id: "youtube-ascii-art-maker",
