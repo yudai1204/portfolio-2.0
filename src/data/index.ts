@@ -217,6 +217,12 @@ export const skills: { lang: Skill[]; framework: Skill[]; infra: Skill[]; tool?:
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
       description: "",
     },
+    {
+      name: "grafana",
+      level: 2,
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg",
+      description: "",
+    },
     // {
     //   name: "Heroku",
     //   level: 1,
