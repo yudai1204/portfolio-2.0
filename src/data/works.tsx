@@ -3,6 +3,29 @@ import type { Work } from "../types";
 
 export const works: Work[] = [
   {
+    id: "shibalab-seiza-gpt",
+    title: "星空に浮かぶストーリー",
+    year: "2024",
+    shortDescription:
+      "2024年5月に実施した学祭である大宮祭で発表した作品です。GPT-4oおよびDALL-E 3のAPIを用いて、ユーザが入力したキーワードから物語とオリジナル星座を生み出します。",
+    longDescription: (
+      <>
+        <Text>
+          2024年5月に実施した学祭である大宮祭で発表した作品です。GPT-4oおよびDALL-E
+          3のAPIを用いて、ユーザが入力したキーワードから物語とオリジナル星座を生み出します。
+        </Text>
+        <Text>
+          約8時間程度で構想からversion1.0の完成まで漕ぎ着けることができました。学祭中は1日で約150人の方に利用していただき、好評をいただきました。
+        </Text>
+      </>
+    ),
+    imageUrls: ["seiza-gpt.jpg"],
+    githubUrl: "https://github.com/Shiba-Lab/omiya-2024-web-app-seiza-gpt",
+    videoUrls: ["PslmMZ3zmc4"],
+    tags: ["React", "TypeScript", "Chakra UI", "Next.js", "p5.js"],
+  },
+
+  {
     id: "moonquake-viewer",
     title: "Moonquake Viewer",
     year: "2023",
