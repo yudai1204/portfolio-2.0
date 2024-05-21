@@ -114,6 +114,12 @@ export const skills: { lang: Skill[]; framework: Skill[]; infra: Skill[]; tool?:
       description: "",
     },
     {
+      name: "Astro",
+      level: 4,
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg",
+      description: "",
+    },
+    {
       name: "Vue.js",
       level: 3,
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
