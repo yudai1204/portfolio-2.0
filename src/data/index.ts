@@ -6,7 +6,6 @@ export const affiliations = [
   { name: "デジクリ (サークル)", link: "https://digicre.net" },
   { name: "株式会社Nexceed 開発インターン", link: "https://nexceed.co.jp/" },
   { name: "カバー株式会社 開発インターン", link: "https://cover-corp.com/" },
-  { name: "株式会社ウサギィ 開発アルバイト", link: "https://usagee.co.jp/" },
 ];
 
 export const awards = [

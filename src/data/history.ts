@@ -144,7 +144,7 @@ export const events: Event[] = [
   },
   {
     side: "right",
-    year: "2023/8 ~ 現在",
+    year: "2023/8 ~ 2024/10",
     title: "株式会社Nexceed",
     supplement: "インターンシップ (通年)",
     content: "React, NestJSを使ったWeb開発インターンシップ",
@@ -187,7 +187,7 @@ export const events: Event[] = [
   },
   {
     side: "right",
-    year: "2023/10 ~ 現在",
+    year: "2023/10 ~ 2024/9",
     title: "株式会社ウサギィ",
     supplement: "開発アルバイト",
     href: "https://usagee.co.jp/",
@@ -233,5 +233,12 @@ export const events: Event[] = [
     content: "PlayStation5のシステムソフトウェア開発",
     href: "https://sonyinteractive.com/jp/",
     icon: "/sony-logo.png",
+  },
+  {
+    side: "right",
+    year: "2025/4",
+    title: "国内ゲーム企業",
+    supplement: "正社員",
+    content: "国内ゲーム企業でのゲーム開発業務（予定）",
   },
 ];
