@@ -234,11 +234,11 @@ export const events: Event[] = [
     href: "https://sonyinteractive.com/jp/",
     icon: "/sony-logo.png",
   },
-  {
-    side: "right",
-    year: "2025/4",
-    title: "国内ゲーム企業",
-    supplement: "正社員",
-    content: "国内ゲーム企業でのゲーム開発業務（予定）",
-  },
+  // {
+  //   side: "right",
+  //   year: "2025/4",
+  //   title: "国内ゲーム企業",
+  //   supplement: "正社員",
+  //   content: "国内ゲーム企業でのゲーム開発業務（予定）",
+  // },
 ];
