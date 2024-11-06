@@ -3,6 +3,40 @@ import type { Work } from "../types";
 
 export const works: Work[] = [
   {
+    id: "shibalab-yggdrasill",
+    title: "Let the Magic Flower Bloom",
+    year: "2024",
+    shortDescription:
+      "2024年11月に実施した、芝浦工業大学の学祭「芝浦祭」で発表した作品です。フォームの回答内容に応じてユーザ独自の世界観に花を咲かせます。多くの変化項目があり、また多くのデバイスが連動して1つの作品となる複雑な構成になっています。",
+    longDescription: (
+      <>
+        <Text>
+          2024年11月に実施した、芝浦工業大学の学祭「芝浦祭」で発表した作品です。
+          OpenAIのJSONスキーマモードでフォームの回答内容から独自の回答を生成し、それを用いてユーザ独自の世界観に花を咲かせます。
+        </Text>
+        <Text>
+          ユーザーのスマートフォンで独自のフォームを開き回答をすると、QRコードが画面上に表示されます。
+          そのQRコードを展示会場内の端末に載せることで、ユーザーのスマートフォン上に「魔法の種」が表示されます。
+          展示場内のジョウロでその種に水をあげると、種は成長しスマートフォンの大きさを超える花が会場のスクリーン上に映し出されます。
+          また、その際にタブレットで窓を作り物理的なマスクを行なっており、「仮想的な窓」から見える景色は違った色合いになります。
+        </Text>
+        <Text>
+          数多くのデバイスが連動し、1つの作品となっています。
+          現在インターネットには数多くのデバイスが接続されていますが、それらの「つながり」を可視化し、インターネットを通さない現実の世界に落とし込むことで、自分のスマートフォンから世界へと変化を与えられることを表現しました。
+        </Text>
+        <Text>
+          ユーザの入力により変化させられる項目として、花の色やモデル、木のモデル、背景の世界、天気、時間帯などがあります。
+        </Text>
+        <Text>この作品は私のアイデアをもとに3人の班で制作を行いました。私はメインプログラムの制作を担当しました。</Text>
+      </>
+    ),
+    imageUrls: ["yggdrasill1.jpg", "yggdrasill3.jpg", "yggdrasill2.jpg"],
+    githubUrl: "https://github.com/yudai1204/project-yggdrasill",
+    videoUrls: ["74FTShiPke8", "9PNZJ4TNNmo", "jJxSa6Ol0Oo"],
+    tags: ["Three.js", "Azure", "WebSocket", "WebGL", "React", "TypeScript", "Chakra UI", "Next.js", "p5.js"],
+  },
+
+  {
     id: "shibalab-seiza-gpt",
     title: "星空に浮かぶストーリー",
     year: "2024",

@@ -38,7 +38,10 @@ export type Tag =
   | "Chakra UI"
   | "インタラクティブアート"
   | "VSCode拡張機能"
-  | "Three.js";
+  | "Three.js"
+  | "WebGL"
+  | "WebSocket"
+  | "Azure";
 
 export type Work = {
   id: string;
