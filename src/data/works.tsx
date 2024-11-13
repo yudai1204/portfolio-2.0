@@ -33,7 +33,19 @@ export const works: Work[] = [
     imageUrls: ["yggdrasill1.jpg", "yggdrasill3.jpg", "yggdrasill2.jpg"],
     githubUrl: "https://github.com/yudai1204/project-yggdrasill",
     videoUrls: ["74FTShiPke8", "9PNZJ4TNNmo", "jJxSa6Ol0Oo"],
-    tags: ["Three.js", "Azure", "WebSocket", "WebGL", "React", "TypeScript", "Chakra UI", "Next.js", "p5.js"],
+    tags: [
+      "Three.js",
+      "Azure",
+      "Python",
+      "WebSocket",
+      "WebGL",
+      "React",
+      "TypeScript",
+      "Chakra UI",
+      "Next.js",
+      "p5.js",
+      "Arduino",
+    ],
   },
 
   {
@@ -117,6 +129,28 @@ export const works: Work[] = [
       },
     ],
     tags: ["JavaScript", "Chrome拡張機能", "複数人開発", "Git"],
+  },
+
+  {
+    id: "lab-hp",
+    title: "研究室Webサイト",
+    year: "2024",
+    shortDescription: "大学で所属している研究室のWebサイトをAstroを用いて作成しました。",
+    longDescription: (
+      <>
+        <Text>大学で所属している研究室のWebサイトをAstroを用いて作成しました。</Text>
+        <Text>GitHub Pages上にデプロイされており、自動でビルドテストも走ります。</Text>
+      </>
+    ),
+    imageUrls: ["manabelab.jpg"],
+    githubUrl: "https://github.com/physically-augmented-interaction/manabe-lab-hp",
+    urls: [
+      {
+        name: "Webサイト",
+        url: "https://pai.eng.shibaura-it.ac.jp/",
+      },
+    ],
+    tags: ["Astro", "TypeScript"],
   },
 
   {

@@ -41,7 +41,8 @@ export type Tag =
   | "Three.js"
   | "WebGL"
   | "WebSocket"
-  | "Azure";
+  | "Azure"
+  | "Astro";
 
 export type Work = {
   id: string;
