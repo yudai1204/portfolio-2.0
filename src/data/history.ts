@@ -221,7 +221,7 @@ export const events: Event[] = [
   },
   {
     side: "right",
-    year: "2023/12 ~ 現在",
+    year: "2023/12 ~ 2025/3",
     title: "芝浦工業大学 真鍋研究室",
     href: "http://pai.ise.shibaura-it.ac.jp/",
   },

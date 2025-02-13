@@ -4,7 +4,6 @@ export const affiliations = [
   { name: "芝浦工業大学 工学部情報工学科 実世界インタラクション研究室", link: null },
   { name: "ShibaLab (サークル)", link: "https://shibalab.com" },
   { name: "デジクリ (サークル)", link: "https://digicre.net" },
-  { name: "株式会社Nexceed 開発インターン", link: "https://nexceed.co.jp/" },
   { name: "カバー株式会社 開発インターン", link: "https://cover-corp.com/" },
 ];
 
